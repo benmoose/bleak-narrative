@@ -1,0 +1,31 @@
+{
+  "name": "bleak-narrative",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start"
+  },
+  "author": "Ben Hadfield <benjohnhadfield@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.16.1",
+    "glob": "^7.1.6",
+    "moment": "^2.29.1",
+    "next": "^9.5.5",
+    "next-images": "^1.6.2",
+    "prismic-dom": "^2.2.4",
+    "prismic-javascript": "^3.0.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "standard": "^16.0.2"
+  }
+}

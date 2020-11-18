@@ -1,0 +1,13 @@
+body {
+  font-size: 1.1rem;
+  background: #fdfcff;
+}
+
+a, small {
+  font-family: 'Ubuntu Mono', Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Permanent Marker', Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+}

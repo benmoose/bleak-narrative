@@ -1,0 +1,48 @@
+.background {
+  background: transparent;
+  padding: 25px;
+  z-index: 100;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+}
+
+.navSection {
+  flex: 1;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.textCentre {
+  text-align: center;
+}
+
+.linkItem {
+  margin: 0 10px;
+  color: black;
+  opacity: .7;
+}
+
+.linkItem:hover {
+  color: black;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.brandLink, .brandLink:hover {
+  text-decoration: none;
+}
+
+.soundcloud {
+  width: 34px;
+  opacity: .8;
+  transition: opacity 60ms;
+}
+
+.soundcloud:hover {
+  opacity: .9;
+}

@@ -1,0 +1,15 @@
+.link {
+  display: inline-block;
+  padding: 2px 5px;
+  /* border-bottom: 3px solid black; */
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 80ms;
+}
+
+.link:hover {
+  color: black;
+  text-decoration: none;
+  opacity: .7;
+}
