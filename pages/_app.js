@@ -9,7 +9,7 @@ export default Layout(({ Component, pageProps }) => {
     <>
       <Helmet>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Noto+Sans+HK&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet" />
       </Helmet>
       <Component {...pageProps} />
     </>

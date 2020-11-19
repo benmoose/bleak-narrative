@@ -11,7 +11,6 @@ const Home = props => {
         key={doc.uid}
         id={doc.uid}
         type={doc.type}
-        href={`/${doc.type}/${doc.uid}`}
         document={doc.document}
       />
     )
@@ -20,18 +19,16 @@ const Home = props => {
 
 export async function getStaticProps() {
   const prismicResponse = await prismicAPI().then(function(api) {
-    return api.query(Prismic.Predicates.any('document.type', ["music", "photo_gallery"]))
+    return api.query(
+      Prismic.Predicates.any('document.type', ["music", "photo_gallery", "cratedigging"]),
+      { orderings : '[document.first_publication_date desc]' },
+    )
   })
 
   const feedLinks = prismicResponse.results.map(document => {
-    console.log("R", document)
-    const titleData = document.data.title
-    if (titleData.length === 0) {
-      return null
-    }
     const { uid, type } = document
     return { uid, type, document }
-  }).filter(el => !!el).reverse()
+  }).filter(el => !!el)
   return { props: { feedLinks } }
 }
 

@@ -1,26 +1,21 @@
 import Prismic from 'prismic-javascript'
 import {useRouter} from 'next/router'
 
+import CratediggingPage from '../../components/cratediggingPage'
+import MusicPage from '../../components/musicPage'
 import { prismicAPI } from '../../utils/prismic'
-import Story from '../../components/story'
 
-const StoryPage = ({ content }) => {
+const Page = ({ document }) => {
   const router = useRouter()
-  return (
-    <Story
-      title={content.data.title[0].text}
-      timestamp={content.first_publication_date}
-      content={content.data.description}
-      embed={content.data.soundcloud_link}
-    />
-  )
+  const PageComponent = pageComponentForType(router.query.type)
+  return <PageComponent document={document} />
 }
 
 export async function getStaticProps({ params }) {
-  const pageContent = await prismicAPI().then(api => {
+  const document = await prismicAPI().then(api => {
     return api.getByUID(params.type, params.uid)
   })
-  const props = { content: pageContent }
+  const props = { document }
   return { props }
 }
 
@@ -28,7 +23,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const allStories = await prismicAPI().then(api => {
     return api.query(
-      Prismic.Predicates.any('document.type', ["music", "photo_gallery"]),
+      Prismic.Predicates.any('document.type', ["music", "photo_gallery", "cratedigging"]),
       {pageSize: 100},
     )
   })
@@ -38,4 +33,14 @@ export async function getStaticPaths() {
   }
 }
 
-export default StoryPage
+function pageComponentForType (type) {
+  switch (type) {
+    case "music":
+      return MusicPage
+    case "cratedigging":
+      return CratediggingPage
+  }
+  throw Error(`No page component for ${type} page type`)
+}
+
+export default Page

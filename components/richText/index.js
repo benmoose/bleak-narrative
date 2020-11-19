@@ -1,8 +1,8 @@
 import React from 'react'
 import PrismicDOM from 'prismic-dom'
-import styles from './storyContent.module.css'
+import styles from './richText.module.css'
 
-export default ({ content }) => {
+const RichText = ({ content }) => {
   return (
     <div
       className={styles.content}
@@ -10,3 +10,5 @@ export default ({ content }) => {
     />
   )
 }
+
+export default RichText
