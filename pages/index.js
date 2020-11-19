@@ -20,7 +20,7 @@ const Home = props => {
 export async function getStaticProps() {
   const prismicResponse = await prismicAPI().then(function(api) {
     return api.query(
-      Prismic.Predicates.any('document.type', ["music", "photo_gallery", "cratedigging"]),
+      Prismic.Predicates.any('document.type', ["music", "cratedigging"]),
       { orderings : '[document.first_publication_date desc]' },
     )
   })

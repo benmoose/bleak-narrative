@@ -1,14 +1,10 @@
 import Prismic from 'prismic-javascript'
-import {useRouter} from 'next/router'
 
-import CratediggingPage from '../../components/cratediggingPage'
-import MusicPage from '../../components/musicPage'
+import Page from '../../components/page'
 import { prismicAPI } from '../../utils/prismic'
 
-const Page = ({ document }) => {
-  const router = useRouter()
-  const PageComponent = pageComponentForType(router.query.type)
-  return <PageComponent document={document} />
+const BleakPage = ({ document }) => {
+  return <Page document={document} />
 }
 
 export async function getStaticProps({ params }) {
@@ -33,14 +29,4 @@ export async function getStaticPaths() {
   }
 }
 
-function pageComponentForType (type) {
-  switch (type) {
-    case "music":
-      return MusicPage
-    case "cratedigging":
-      return CratediggingPage
-  }
-  throw Error(`No page component for ${type} page type`)
-}
-
-export default Page
+export default BleakPage
