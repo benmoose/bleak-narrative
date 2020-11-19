@@ -6,7 +6,6 @@ import RichText from '../richText'
 import styles from './cratediggingPage.module.css'
 
 const CratediggingTrack = ({ track, description }) => {
-  console.log(track, description)
   const TrackPlayer = getProviderEmbedComponent(track.provider_name)
   return (
     <article className={styles.container}>

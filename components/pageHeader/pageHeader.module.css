@@ -14,3 +14,19 @@
 .backIcon {
   width: 20px;
 }
+
+.metadataContainer {
+  display: flex;
+  justify-content: start;
+}
+
+.metadata {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.authorLink {
+  display: inline;
+  color: inherit;
+  font-weight: bold;
+}

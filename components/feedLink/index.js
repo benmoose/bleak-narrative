@@ -60,7 +60,7 @@ function getBody (type, document) {
     case "music":
       return document.data.description[0].text
     case "cratedigging":
-      return "Brand new collection of hidden gems for your listening pleasure."
+      return `${document.data.tracks.length} hidden gems for your listening pleasure, uncovered by by ${document.data.author_name}.`
   }
   throw Error(`Cannot get feed-link body for ${type} type`)
 }
