@@ -1,11 +1,13 @@
 import RichText from '../richText'
 import styles from './photoWithCaption.module.css'
 
-const PhotoWithCaption = ({ image, caption }) => {
+const PhotoWithCaption = ({ image, caption, onPhotoClick }) => {
   return (
     <section className={styles.container}>
       <div className={styles.imgContainer}>
-        <img src={image.url} alt={image.alt} />
+        <a onClick={onPhotoClick}>
+          <img src={image.url} alt={image.alt} />
+        </a>
       </div>
       <div className={styles.captionContainer}>
         <RichText content={caption} />

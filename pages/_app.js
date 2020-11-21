@@ -3,6 +3,7 @@ import Layout from '../enhancers/layout'
 
 import '../public/css/reboot.css'
 import '../public/css/global.css'
+import 'react-bnb-gallery/dist/style.css'
 
 export default Layout(({ Component, pageProps }) => {
   return (

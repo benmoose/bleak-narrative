@@ -8,6 +8,22 @@
   margin-bottom: 50px;
 }
 
+.imgContainer {
+  transition: opacity 80ms;
+  cursor: pointer;
+}
+
+.imgContainer:hover {
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+  opacity: .8;
+}
+
+.imgContainer img {
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+}
+
 @media only screen and (min-width: 778px) {
   .container {
     flex-direction: row;
@@ -20,16 +36,16 @@
   .imgContainer {
     max-width: 60%;
   }
+
+  .container:nth-child(even) .captionContainer {
+    padding: 0 15px 0 0;
+  }
+
+  .container:nth-child(odd) .captionContainer {
+    padding: 0 0 0 15px;
+  }
 }
 
 .captionContainer {
   width: 100%;
-}
-
-.container:nth-child(even) .captionContainer {
-  padding: 0 15px 0 0;
-}
-
-.container:nth-child(odd) .captionContainer {
-  padding: 0 0 0 15px;
 }

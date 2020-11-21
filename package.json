@@ -22,6 +22,7 @@
     "prismic-dom": "^2.2.4",
     "prismic-javascript": "^3.0.2",
     "react": "^16.14.0",
+    "react-bnb-gallery": "^1.4.4",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0"
   },
