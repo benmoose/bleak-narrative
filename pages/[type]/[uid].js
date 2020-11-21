@@ -19,7 +19,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const allStories = await prismicAPI().then(api => {
     return api.query(
-      Prismic.Predicates.any('document.type', ["music", "photo_gallery", "cratedigging"]),
+      Prismic.Predicates.any('document.type', ["music", "photos", "cratedigging"]),
       {pageSize: 100},
     )
   })

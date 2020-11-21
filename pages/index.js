@@ -6,6 +6,7 @@ import FeedLink from '../components/feedLink'
 
 const Home = props => {
   return props.feedLinks.map(doc => {
+    console.log(doc.document)
     return (
       <FeedLink
         key={doc.uid}
@@ -20,7 +21,7 @@ const Home = props => {
 export async function getStaticProps() {
   const prismicResponse = await prismicAPI().then(function(api) {
     return api.query(
-      Prismic.Predicates.any('document.type', ["music", "cratedigging"]),
+      Prismic.Predicates.any('document.type', ["music", "photos", "cratedigging"]),
       { orderings : '[document.first_publication_date desc]' },
     )
   })

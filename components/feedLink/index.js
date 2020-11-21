@@ -49,6 +49,8 @@ function getTitle (type, document) {
   switch (type) {
     case "music":
       return document.data.title[0].text
+    case "photos":
+      return document.data.title[0].text
     case "cratedigging":
       return "Crate digging " + format(parseISO(document.first_publication_date), "LLLL yy")
   }
@@ -59,6 +61,8 @@ function getBody (type, document) {
   switch (type) {
     case "music":
       return document.data.description[0].text
+    case "photos":
+      return ""
     case "cratedigging":
       return `${document.data.tracks.length} hidden gems for your listening pleasure, uncovered by by ${document.data.author_name}.`
   }
@@ -69,6 +73,8 @@ function getThumbnail (type, document) {
   switch (type) {
     case "music":
       return document.data.soundcloud_link.thumbnail_url
+    case "photos":
+      return document.data.feed_thumbnail.url
     case "cratedigging":
       return document.data.feed_image.url
   }
@@ -79,7 +85,7 @@ function getLinkText (type) {
   switch (type) {
     case "music":
       return "Listen to the mix"
-    case "photo_gallery":
+    case "photos":
       return "See more"
     case "cratedigging":
       return "Explore the crate"
