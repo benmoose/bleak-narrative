@@ -15,7 +15,12 @@ const MusicPage = ({ document }) => {
   const hasSoundcloudMedia = soundcloudLink && soundcloudLink.embed_url
   return (
     <main>
-      <PageHeader title={title} timestamp={document.first_publication_date} />
+      <PageHeader
+        title={title}
+        timestamp={document.first_publication_date}
+        authorName={document.data.author_name}
+        authorLink={document.data.author_profile && document.data.author_profile.embed_url}
+      />
       {hasSoundcloudMedia && (
         <SoundcloudPlayer src={soundcloudLink.embed_url} />
       )}

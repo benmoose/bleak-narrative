@@ -6,7 +6,6 @@ import FeedLink from '../components/feedLink'
 
 const Home = props => {
   return props.feedLinks.map(doc => {
-    console.log(doc.document)
     return (
       <FeedLink
         key={doc.uid}

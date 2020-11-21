@@ -3,6 +3,8 @@ body {
   background: #fdfcff;
   font-family: 'Noto Sans HK', sans-serif;
   letter-spacing: 0.025rem;
+  background-image: url('/img/background.png');
+  background-repeat: repeat;
 }
 
 p {
@@ -15,16 +17,16 @@ small {
 
 h1, h2 {
   font-family: 'Permanent Marker', Arial, Helvetica, sans-serif;
-  font-size: 1.95em;
+  font-size: 2.2em;
   line-height: 1.3em;
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 2.1em;
 }
 
 @media only screen and (min-width: 778px) {
   body {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }

@@ -1,16 +1,35 @@
 .container img {
   width: 100%;
-  margin-bottom: 50px;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
-.imgContainer {
-  max-width: 60%;
+@media only screen and (min-width: 778px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .container:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .imgContainer {
+    max-width: 60%;
+  }
 }
 
 .captionContainer {
-  padding-left: 15px;
+  width: 100%;
+}
+
+.container:nth-child(even) .captionContainer {
+  padding: 0 15px 0 0;
+}
+
+.container:nth-child(odd) .captionContainer {
+  padding: 0 0 0 15px;
 }

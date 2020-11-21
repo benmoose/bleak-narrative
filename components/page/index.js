@@ -3,7 +3,7 @@ import MusicPage from '../musicPage'
 import PhotoPage from '../photoPage'
 
 const Page = ({ document }) => {
-  console.log(document)
+  console.log(document.type, document)
   const PageComponent = pageComponentForType(document.type)
   return <PageComponent document={document} />
 }
