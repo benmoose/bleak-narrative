@@ -6,7 +6,7 @@ import CratediggingTrack from './cratediggingTrack'
 const CratediggingPage = ({ document }) => {
   const title = `Crate Digging ${format(parseISO(document.first_publication_date), "LLLL yyy")}`
   return (
-    <main>
+    <>
       <PageHeader
         title={title}
         timestamp={document.first_publication_date}
@@ -19,7 +19,7 @@ const CratediggingPage = ({ document }) => {
             <CratediggingTrack key={i} track={track} description={description} />
           ))
       }
-    </main>
+    </>
   )
 }
 

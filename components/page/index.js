@@ -1,6 +1,7 @@
 import CratediggingPage from '../cratediggingPage'
 import MusicPage from '../musicPage'
 import PhotoPage from '../photoPage'
+import StoryPage from '../storyPage'
 
 const Page = ({ document }) => {
   console.log(document.type, document)
@@ -16,6 +17,8 @@ function pageComponentForType (type) {
       return CratediggingPage
     case "photos":
       return PhotoPage
+    case "story":
+      return StoryPage
   }
   throw Error(`No page component for ${type} page type`)
 }

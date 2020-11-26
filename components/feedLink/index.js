@@ -53,6 +53,8 @@ function getTitle (type, document) {
       return document.data.title[0].text
     case "cratedigging":
       return "Crate digging " + format(parseISO(document.first_publication_date), "LLLL yy")
+    case "story":
+      return document.data.title[0].text
   }
   throw Error(`Cannot get feed-link title for ${type} type`)
 }
@@ -65,6 +67,8 @@ function getBody (type, document) {
       return ""
     case "cratedigging":
       return `${document.data.tracks.length} hidden gems for your listening pleasure, uncovered by by ${document.data.author_name}.`
+    case "story":
+      return document.data.story_content[0].text
   }
   throw Error(`Cannot get feed-link body for ${type} type`)
 }
@@ -77,6 +81,8 @@ function getThumbnail (type, document) {
       return document.data.feed_thumbnail.url
     case "cratedigging":
       return document.data.feed_image.url
+    case "story":
+      return document.data.feed_thumbnail.url
   }
   throw Error(`Cannot get feed-link thumbnail for ${type} type`)
 }

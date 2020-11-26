@@ -14,7 +14,7 @@ const MusicPage = ({ document }) => {
 
   const hasSoundcloudMedia = soundcloudLink && soundcloudLink.embed_url
   return (
-    <main>
+    <>
       <PageHeader
         title={title}
         timestamp={document.first_publication_date}
@@ -30,7 +30,7 @@ const MusicPage = ({ document }) => {
           Listen on SoundCloud <img className={styles.externalLinkIcon} src={linkIcon} />
         </Link>
       </div>
-    </main>
+    </>
   )
 }
 
