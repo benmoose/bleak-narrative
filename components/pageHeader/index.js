@@ -16,7 +16,7 @@ const PageHeader = ({ title, timestamp, authorName, authorLink }) => {
       <div className={styles.linkContainer}>
         <Link href="/"><img className={styles.backIcon} src={backIcon} /> Back</Link>
       </div>
-      <h1>{title}</h1>
+      <h1 className={styles.title}>{title}</h1>
       <div className={styles.metadataContainer}>
         {
           timestampFormatted && (

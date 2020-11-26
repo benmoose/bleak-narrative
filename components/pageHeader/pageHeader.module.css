@@ -2,6 +2,11 @@
   margin-bottom: 50px;
 }
 
+.title {
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
 .metadataContainer {
   display: flex;
   justify-content: flex-start;
