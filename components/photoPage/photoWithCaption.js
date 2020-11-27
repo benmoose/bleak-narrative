@@ -1,26 +1,36 @@
-import RichText from '../richText'
 import CaptionIcon from '../../public/icons/triangle-up.svg'
 import styles from './photoWithCaption.module.css'
 
-const PhotoWithCaption = ({ image, caption, onPhotoClick }) => {
+const PhotoWithCaption = ({ imageURL, imageAlt, children, onImageClick }) => {
+  const ImageC = getImageComponent({imageURL, imageAlt, onImageClick})
   return (
     <section className={styles.container}>
       <div className={styles.galleryItem}>
         <div className={styles.imgContainer}>
-          <a onClick={onPhotoClick}>
-            <img src={image.url} alt={image.alt} className={styles.img} />
-          </a>
+          <ImageC />
         </div>
         {
-          caption && caption.length > 0 && (
+          children && (
             <div className={styles.captionContainer}>
               <img className={styles.captionIcon} src={CaptionIcon} />
-              <RichText content={caption} />
+              {children}
             </div>
           )
         }
       </div>
     </section>
+  )
+}
+
+function getImageComponent ({imageURL, imageAlt, onImageClick }) {
+  const ImgC = () => <img src={imageURL} alt={imageAlt} className={styles.img} />
+  if (!onImageClick) {
+    return ImgC
+  }
+  return () => (
+    <a onClick={onImageClick}>
+      <ImgC />
+    </a>
   )
 }
 

@@ -24,6 +24,10 @@
   text-decoration: underline;
 }
 
+.footerLinks .copyright {
+  margin-bottom: 15px;
+}
+
 .footerImage {
   margin-bottom: 20px;
   width: 100%;

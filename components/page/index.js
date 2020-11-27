@@ -4,7 +4,6 @@ import PhotoPage from '../photoPage'
 import StoryPage from '../storyPage'
 
 const Page = ({ document }) => {
-  console.log(document.type, document)
   const PageComponent = pageComponentForType(document.type)
   return <PageComponent document={document} />
 }

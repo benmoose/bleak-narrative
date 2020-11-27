@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactBnbGallery from 'react-bnb-gallery'
 
 import PageHeader from '../pageHeader'
+import RichText from '../richText'
 import PhotoWithCaption from './photoWithCaption'
 
 const PhotoPage = ({ document }) => {
@@ -34,7 +35,11 @@ const PhotoPage = ({ document }) => {
       />
       {
         document.data.photos.map(({ image, caption}, i) => {
-          return <PhotoWithCaption key={`${i}-${image.url}`} onPhotoClick={() => openGalleryOnPhoto(i)} image={image} caption={caption} />
+          return (
+            <PhotoWithCaption key={`${i}-${image.url}`} onImageClick={() => openGalleryOnPhoto(i)} imageURL={image.url} imageAlt={image.alt}>
+              <RichText content={caption} />
+            </PhotoWithCaption>
+          )
         })
       }
     </>
