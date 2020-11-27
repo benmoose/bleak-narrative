@@ -3,8 +3,9 @@
 }
 
 .title {
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
   padding: 0;
+  line-height: 1.1em;
 }
 
 .metadataContainer {
@@ -15,6 +16,7 @@
 .metadata {
   display: inline-block;
   margin-right: 17px;
+  color: #555;
 }
 
 .metadataIcon {
@@ -36,6 +38,13 @@
 
 .authorLink {
   display: inline;
-  color: inherit;
   font-weight: bold;
+  color: #000;
+}
+
+.authorLink:hover {
+  display: inline;
+  font-weight: bold;
+  color: #000;
+  text-decoration: underline;
 }

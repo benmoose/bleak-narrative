@@ -1,11 +1,10 @@
 .link {
   display: inline-block;
+  position: relative;
   padding: 2px 0px;
-  /* border-bottom: 3px solid black; */
   color: black;
   text-decoration: none;
-  font-weight: bold;
-  transition: opacity 80ms;
+  transition: opacity, background-color 80ms;
 }
 
 .link:hover {

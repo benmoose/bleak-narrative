@@ -1,23 +1,39 @@
+@font-face {
+  font-family: BodyFont;
+  src: url('/font/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: BodyFont;
+  src: url('/font/Poppins-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: HeadingFont;
+  src: url('/font/PermanentMarker-Regular.ttf') format('truetype');
+}
+
 body {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   background: #fdfcff;
-  font-family: 'Noto Sans HK', sans-serif;
-  letter-spacing: 0.025rem;
+  font-family: 'BodyFont', sans-serif;
+  letter-spacing: 0.03rem;
   background-image: url('/img/background.png');
   background-repeat: repeat;
 }
 
 p {
-  line-height: 1.4em;
+  line-height: 1.6em;
 }
 
 small {
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'HeadingFont', monospace;
   font-size: 1em;
 }
 
 h1, h2 {
-  font-family: 'Permanent Marker', Arial, Helvetica, sans-serif;
+  font-family: 'HeadingFont', Arial, Helvetica, sans-serif;
   font-size: 2.3em;
   line-height: 1.3em;
   margin-bottom: 50px;
@@ -28,6 +44,10 @@ h2 {
 }
 
 @media only screen and (min-width: 778px) {
+  body {
+    font-size: 1.1rem;
+  }
+
   h1 {
     font-size: 2.7em;
   }
