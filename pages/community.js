@@ -1,5 +1,5 @@
-import BleakStrip from '../public/img/bleak-strip-community.png'
 import Bio from '../components/bio'
+import BleakStrip from '../public/img/bleak-strip-community.png'
 import Stiborski from '../public/img/stiborski-bleak.jpg'
 import Whattis from '../public/img/whattis-bleak.jpg'
 import Elk from '../public/img/elk-bleak.jpg'
@@ -24,7 +24,7 @@ const CommunityPage = () => {
       </Bio>
       <Bio
         img={Elk}
-        title="Elk (UK)"
+        title="ELk (UK)"
       >
         <p>My story began when a first date took an unexpected turn and dumped innocent little pre-techno me right into the heart of London’s blistering underground rave scene. That night marked the first of countless memories forged by beautiful strangers and pounding beats, and began a voyage of liberation and <span style={{textDecoration: "line-through", fontStyle: "italic", textDecorationColor: "#f61003"}}>k-holes</span> *ahem*, human connection. You'll find me throwing inhuman shapes in the front row or conjuring underground sounds from behind the decks, I just want to live in the moment and give a big middle finger to convention. Although dance floors have gone quiet, the rave never stops... it’s just moved home with us ♥ and Bleak is here to support those vibes and spark new kinds of adventures with people from across the world. We’re here for you and our scene through these isolating times, and beyond 👊 x (Addendum: average cook).</p>
       </Bio>

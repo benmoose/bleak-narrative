@@ -11,8 +11,10 @@ const MusicPage = ({ document }) => {
   const title = document.data.title[0].text
   const content = document.data.description
   const soundcloudLink = document.data.soundcloud_link
+  const artistImage = document.data.artist_image
 
   const hasSoundcloudMedia = soundcloudLink && soundcloudLink.embed_url
+  const hasArtistImage = artistImage && artistImage.url
   return (
     <>
       <PageHeader
@@ -22,7 +24,9 @@ const MusicPage = ({ document }) => {
         authorLink={document.data.author_profile && document.data.author_profile.embed_url}
       />
       {hasSoundcloudMedia && (
-        <SoundcloudPlayer src={soundcloudLink.embed_url} />
+        <div className={styles.soundcloudContainer}>
+          <SoundcloudPlayer src={soundcloudLink.embed_url} />
+        </div>
       )}
       <RichText content={content} />
       <div className={styles.soundcloudFooterLink}>

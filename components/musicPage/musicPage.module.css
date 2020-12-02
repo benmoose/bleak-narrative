@@ -14,3 +14,11 @@
 .externalLinkIcon {
   width: 28px;
 }
+
+.embedContainer {
+  display: flex;
+}
+
+.soundcloudContainer {
+  width: 100%;
+}
