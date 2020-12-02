@@ -1,8 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import c from 'classnames'
 
 import styles from './nav.module.css'
+import Link from '../link'
 import bleakLogo from '../../public/img/bleak-icon.png'
 import soundcloudLogo from '../../public/icons/soundcloud.svg'
 
@@ -12,13 +13,14 @@ const Nav = () => {
       <div className={styles.navContainer}>
         <div className={styles.navSection}></div>
         <div className={c(styles.navSection, styles.textCentre)}>
-          <Link href="/">
+          <NextLink href="/">
             <a className={styles.brandLink}>
               <img src={bleakLogo} style={{width: "62px"}} alt="Bleak Narrative" />
             </a>
-          </Link>
+          </NextLink>
         </div>
         <div className={c(styles.navSection, styles.textRight)}>
+          <Link className={styles.navLink} href="/community">Community</Link>
           <a target="_blank" href="https://soundcloud.com/bleaknarrative">
             <img className={styles.soundcloud} src={soundcloudLogo} />
           </a>

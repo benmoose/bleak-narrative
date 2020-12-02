@@ -1,5 +1,5 @@
 .maxPageWidth {
-  max-width: 800px;
+  max-width: 808px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -25,4 +25,8 @@
   background: #fbfafa;
   border-top: 1px solid #eee;
   margin-top: 100px;
+}
+
+@media only screen and (min-width: 778px) {
+
 }

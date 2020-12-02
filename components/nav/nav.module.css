@@ -36,12 +36,22 @@
   text-decoration: none;
 }
 
+.navLink {
+  color: black;
+  margin: 0 15px 0 0;
+  font-size: .9em;
+}
+
 .soundcloud {
-  width: 40px;
+  width: 36px;
   opacity: .8;
   transition: opacity 60ms;
 }
 
 .soundcloud:hover {
   opacity: .9;
+}
+
+@media only screen and (min-width: 778px) {
+
 }
