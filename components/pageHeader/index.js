@@ -5,17 +5,12 @@ import c from 'classnames'
 
 import authorIcon from '../../public/icons/smile.svg'
 import calendarIcon from '../../public/icons/calendar.svg'
-import backIcon from '../../public/icons/left-arrow.svg'
-import Link from '../link'
 import styles from './pageHeader.module.css'
 
 const PageHeader = ({ title, timestamp, authorName, authorLink }) => {
   const timestampFormatted = timestamp && format(parseISO(timestamp), "do LLL yyyy")
   return (
     <section className={styles.container}>
-      <div className={styles.linkContainer}>
-        <Link href="/"><img className={styles.backIcon} src={backIcon} /> Back</Link>
-      </div>
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.metadataContainer}>
         {

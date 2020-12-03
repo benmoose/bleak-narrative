@@ -25,25 +25,27 @@ const FeedLink = ({ id, type, document }) => {
 
 const FeedLinkContent = ({ id, image, href, timestamp, title, body, linkText, type }) => {
   return (
-    <Link href={href} key={id}>
-      <div className={styles.container}>
-        <img className={styles.img} src={image} />
-        <section className={styles.textContainer}>
-          <h2 className={styles.title}>{title}</h2>
-          <small className={styles.timestamp}>{timestamp} / {type}</small>
-          {
-            body && (
-              <p className={styles.snippet}>{getSnippet(body)}</p>
-            )
-          }
-          <div className={styles.linkContainer}>
-            <PageLink href={href}>
-              {linkText} <img className={styles.linkArrowIcon} src={rightArrowIcon} />
-            </PageLink>
-          </div>
-        </section>
-      </div>
-    </Link>
+    <div className={styles.container}>
+      <Link href={href} key={id}>
+        <a className={styles.containerA}>
+          <img className={styles.img} src={image} />
+          <section className={styles.textContainer}>
+            <h2 className={styles.title}>{title}</h2>
+            <small className={styles.timestamp}>{timestamp} / <Link href={`/${type}`}><a>{type}</a></Link></small>
+            {
+              body && (
+                <p className={styles.snippet}>{getSnippet(body)}</p>
+              )
+            }
+            <div className={styles.linkContainer}>
+              <PageLink href={href}>
+                {linkText} <img className={styles.linkArrowIcon} src={rightArrowIcon} />
+              </PageLink>
+            </div>
+          </section>
+        </a>
+      </Link>
+    </div>
   )
 }
 
