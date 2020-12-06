@@ -13,7 +13,7 @@ You'll need these tools installed on your machine
 $ git clone https://github.com/benmoose/bleak-narrative.git
 $ cd bleak-narrative
 # Install project dependencies
-$ npm i
+$ npm install
 # Set the prismic API endpoint in a .env file
 $ echo "PRISMIC_API=https://bleaknarrative.cdn.prismic.io/api/v2" >> .env
 # Build and serve the site locally
