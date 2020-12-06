@@ -7,7 +7,7 @@ const BleakPage = ({ document }) => {
   return <Page document={document} />
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps ({ params }) {
   const document = await prismicAPI().then(api => {
     return api.getByUID(params.type, params.uid)
   })
@@ -16,16 +16,16 @@ export async function getStaticProps({ params }) {
 }
 
 // `getStaticPaths` function tells Next which pages to export at build time
-export async function getStaticPaths() {
+export async function getStaticPaths () {
   const allStories = await prismicAPI().then(api => {
     return api.query(
-      Prismic.Predicates.any('document.type', ["music", "photos", "cratedigging", "story"]),
-      {pageSize: 100},
+      Prismic.Predicates.any('document.type', ['music', 'photos', 'cratedigging', 'story']),
+      { pageSize: 100 }
     )
   })
   return {
     paths: allStories.results.map(({ uid, type }) => ({ params: { uid, type } })),
-    fallback: false,
+    fallback: false
   }
 }
 

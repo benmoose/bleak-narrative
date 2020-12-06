@@ -6,11 +6,11 @@ export default ({ src }) => {
     <div className={styles.container}>
       <iframe
         src={getEmbedSrc(src)}
-        width="440"
-        height="80"
-        frameborder="0"
-        allowtransparency="true"
-        allow="encrypted-media"
+        width='440'
+        height='80'
+        frameborder='0'
+        allowtransparency='true'
+        allow='encrypted-media'
         className={styles.player}
       />
     </div>

@@ -4,7 +4,7 @@ import PageHeader from '../pageHeader'
 import CratediggingTrack from './cratediggingTrack'
 
 const CratediggingPage = ({ document }) => {
-  const title = `Crate Digging ${format(parseISO(document.first_publication_date), "LLLL yyy")}`
+  const title = `Crate Digging ${format(parseISO(document.first_publication_date), 'LLLL yyy')}`
   return (
     <>
       <PageHeader

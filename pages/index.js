@@ -1,7 +1,7 @@
 import React from 'react'
 import Prismic from 'prismic-javascript'
 
-import {prismicAPI} from '../utils/prismic'
+import { prismicAPI } from '../utils/prismic'
 import FeedLink from '../components/feedLink'
 
 const Home = props => {
@@ -19,11 +19,11 @@ const Home = props => {
   )
 }
 
-export async function getStaticProps() {
-  const prismicResponse = await prismicAPI().then(function(api) {
+export async function getStaticProps () {
+  const prismicResponse = await prismicAPI().then(function (api) {
     return api.query(
-      Prismic.Predicates.any('document.type', ["music", "photos", "cratedigging", "story"]),
-      { orderings : '[document.first_publication_date desc]' },
+      Prismic.Predicates.any('document.type', ['music', 'photos', 'cratedigging', 'story']),
+      { orderings: '[document.first_publication_date desc]' }
     )
   })
 

@@ -10,13 +10,13 @@ const Page = ({ document }) => {
 
 function pageComponentForType (type) {
   switch (type) {
-    case "music":
+    case 'music':
       return MusicPage
-    case "cratedigging":
+    case 'cratedigging':
       return CratediggingPage
-    case "photos":
+    case 'photos':
       return PhotoPage
-    case "story":
+    case 'story':
       return StoryPage
   }
   throw Error(`No page component for ${type} page type`)

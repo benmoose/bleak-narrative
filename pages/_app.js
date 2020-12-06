@@ -1,4 +1,4 @@
-import {Helmet} from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import Layout from '../enhancers/layout'
 
 import 'react-bnb-gallery/dist/style.css'

@@ -8,7 +8,7 @@ import calendarIcon from '../../public/icons/calendar.svg'
 import styles from './pageHeader.module.css'
 
 const PageHeader = ({ title, timestamp, authorName, authorLink }) => {
-  const timestampFormatted = timestamp && format(parseISO(timestamp), "do LLL yyyy")
+  const timestampFormatted = timestamp && format(parseISO(timestamp), 'do LLL yyyy')
   return (
     <section className={styles.container}>
       <h1 className={styles.title}>{title}</h1>
@@ -34,7 +34,7 @@ function getAuthor (authorName, authorLink) {
   }
   return (
     <NextLink href={authorLink}>
-      <a target="_blank" className={styles.authorLink}>{authorName}</a>
+      <a target='_blank' className={styles.authorLink}>{authorName}</a>
     </NextLink>
   )
 }

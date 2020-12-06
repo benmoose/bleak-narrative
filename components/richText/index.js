@@ -6,7 +6,7 @@ const RichText = ({ content }) => {
   return (
     <div
       className={styles.content}
-      dangerouslySetInnerHTML={{__html: PrismicDOM.RichText.asHtml(content, null)}}
+      dangerouslySetInnerHTML={{ __html: PrismicDOM.RichText.asHtml(content, null) }}
     />
   )
 }

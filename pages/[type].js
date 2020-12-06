@@ -22,21 +22,21 @@ const BleakPageByType = ({ results, page, totalPages }) => {
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps ({ params }) {
   const pagesForType = await prismicAPI().then(api => api.query(
     Prismic.Predicates.at('document.type', params.type),
-    {pageSize: 100},
+    { pageSize: 100 }
   ))
   const { results, page, total_pages } = pagesForType
   const props = { results, page, totalPages: total_pages }
   return { props }
 }
 
-export async function getStaticPaths() {
-  const types = ["music", "photos", "cratedigging", "story"]
+export async function getStaticPaths () {
+  const types = ['music', 'photos', 'cratedigging', 'story']
   return {
-    paths: types.map(type => ({ params: { type }})),
-    fallback: false,
+    paths: types.map(type => ({ params: { type } })),
+    fallback: false
   }
 }
 

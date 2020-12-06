@@ -13,13 +13,13 @@ const PageFooter = () => {
         <ul className={styles.footerLinks}>
           <li className={styles.copyright}><strong>Copyright © {copyrightYear} Bleak Narrative</strong></li>
           <li>
-            <Link href="/community"><a>Community</a></Link>
+            <Link href='/community'><a>Community</a></Link>
           </li>
           <li>
-            <Link href="/contact"><a>Contact</a></Link>
+            <Link href='/contact'><a>Contact</a></Link>
           </li>
           <li>
-            <Link href="/privacy"><a>Privacy</a></Link>
+            <Link href='/privacy'><a>Privacy</a></Link>
           </li>
         </ul>
         <div className={styles.footerLogoContainer}>

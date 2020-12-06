@@ -17,9 +17,9 @@ const CratediggingTrack = ({ track, description }) => {
 
 function getProviderEmbedComponent (providerName) {
   switch (providerName) {
-    case "SoundCloud":
+    case 'SoundCloud':
       return SoundcloudPlayer
-    case "Spotify":
+    case 'Spotify':
       return SpotifyPlayer
   }
   throw Error(`No player for provider '${providerName}'`)

@@ -8,7 +8,7 @@ import rightArrowIcon from '../../public/icons/right-arrow.svg'
 
 const FeedLink = ({ id, type, document }) => {
   const href = `/${type}/${document.uid}`
-  const createdAt = format(parseISO(document.first_publication_date), "do LLL yyyy")
+  const createdAt = format(parseISO(document.first_publication_date), 'do LLL yyyy')
   return (
     <FeedLinkContent
       id={id}
@@ -51,13 +51,13 @@ const FeedLinkContent = ({ id, image, href, timestamp, title, body, linkText, ty
 
 function getTitle (type, document) {
   switch (type) {
-    case "music":
+    case 'music':
       return document.data.title[0].text
-    case "photos":
+    case 'photos':
       return document.data.title[0].text
-    case "cratedigging":
-      return "Crate digging " + format(parseISO(document.first_publication_date), "LLLL yy")
-    case "story":
+    case 'cratedigging':
+      return 'Crate digging ' + format(parseISO(document.first_publication_date), 'LLLL yy')
+    case 'story':
       return document.data.title[0].text
   }
   throw Error(`Cannot get feed-link title for ${type} type`)
@@ -65,13 +65,13 @@ function getTitle (type, document) {
 
 function getBody (type, document) {
   switch (type) {
-    case "music":
+    case 'music':
       return document.data.description[0].text
-    case "photos":
-      return ""
-    case "cratedigging":
+    case 'photos':
+      return ''
+    case 'cratedigging':
       return `${document.data.tracks.length} hidden gems for your listening pleasure, uncovered by by ${document.data.author_name}.`
-    case "story":
+    case 'story':
       return document.data.story_content[0].text
   }
   throw Error(`Cannot get feed-link body for ${type} type`)
@@ -79,13 +79,13 @@ function getBody (type, document) {
 
 function getThumbnail (type, document) {
   switch (type) {
-    case "music":
+    case 'music':
       return document.data.soundcloud_link.thumbnail_url
-    case "photos":
+    case 'photos':
       return document.data.feed_thumbnail.url
-    case "cratedigging":
+    case 'cratedigging':
       return document.data.feed_image.url
-    case "story":
+    case 'story':
       return document.data.feed_thumbnail.url
   }
   throw Error(`Cannot get feed-link thumbnail for ${type} type`)
@@ -93,26 +93,26 @@ function getThumbnail (type, document) {
 
 function getLinkText (type) {
   switch (type) {
-    case "music":
-      return "Listen to the mix"
-    case "photos":
-      return "See more"
-    case "cratedigging":
-      return "Explore the crate"
+    case 'music':
+      return 'Listen to the mix'
+    case 'photos':
+      return 'See more'
+    case 'cratedigging':
+      return 'Explore the crate'
     default:
-      return "Read more"
+      return 'Read more'
   }
 }
 
 function getSnippet (text) {
   if (!text) {
-    return ""
+    return ''
   }
-  const words = text.split(" ")
+  const words = text.split(' ')
   if (words.length <= 32) {
     return text
   }
-  return words.slice(0, 32).join(" ") + "..."
+  return words.slice(0, 32).join(' ') + '...'
 }
 
 export default FeedLink

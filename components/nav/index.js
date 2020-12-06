@@ -11,17 +11,17 @@ const Nav = () => {
   return (
     <nav className={styles.background}>
       <div className={styles.navContainer}>
-        <div className={styles.navSection}></div>
+        <div className={styles.navSection} />
         <div className={c(styles.navSection, styles.textCentre)}>
-          <NextLink href="/">
+          <NextLink href='/'>
             <a className={styles.brandLink}>
-              <img src={bleakLogo} style={{width: "62px"}} alt="Bleak Narrative" />
+              <img src={bleakLogo} style={{ width: '62px' }} alt='Bleak Narrative' />
             </a>
           </NextLink>
         </div>
         <div className={c(styles.navSection, styles.textRight)}>
-          <Link className={styles.navLink} href="/community">Community</Link>
-          <a target="_blank" href="https://soundcloud.com/bleaknarrative">
+          <Link className={styles.navLink} href='/community'>Community</Link>
+          <a target='_blank' href='https://soundcloud.com/bleaknarrative'>
             <img className={styles.soundcloud} src={soundcloudLogo} />
           </a>
         </div>
