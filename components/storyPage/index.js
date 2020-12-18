@@ -3,7 +3,6 @@ import RichText from '../richText'
 
 const StoryPage = ({ document }) => {
   return (
-
     <>
       <PageHeader
         title={document.data.title[0].text}

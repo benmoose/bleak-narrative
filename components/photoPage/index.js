@@ -4,8 +4,9 @@ import ReactBnbGallery from 'react-bnb-gallery'
 import PageHeader from '../pageHeader'
 import OnePhoto from './onePhoto'
 import TwoPhotos from './twoPhotos'
+import ThreePhotos from './threePhotos'
 
-const SLICE_TYPES = ['one_photo', 'two_photos']
+const SLICE_TYPES = ['one_photo', 'two_photos', 'three_photos']
 
 const PhotoPage = ({ document }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,7 +36,7 @@ const PhotoPage = ({ document }) => {
         activePhotoIndex={initialPhoto}
         show={isOpen}
         photos={photos}
-        // showThumbnails={false}
+        showThumbnails={false}
         onClose={() => setIsOpen(false)}
       />
 
@@ -46,6 +47,8 @@ const PhotoPage = ({ document }) => {
               return <OnePhoto key={i} items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
             case 'two_photos':
               return <TwoPhotos key={i} items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
+            case 'three_photos':
+              return <ThreePhotos key={i} items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
             default:
               throw Error(`No component for photo-page body slice of type ${slice.slice_type}`)
           }
@@ -66,6 +69,10 @@ function getPhotosDataForGallery (body) {
         } else if (item.slice_type === 'two_photos') {
           photox.push(galleryItem.image_1)
           photox.push(galleryItem.image_2)
+        } else if (item.slice_type === 'three_photos') {
+          photox.push(galleryItem.image_1)
+          photox.push(galleryItem.image_2)
+          photox.push(galleryItem.image_3)
         }
       })
     })
@@ -84,6 +91,10 @@ function getPhotoURLToGalleryIndexMap (body) {
         } else if (item.slice_type === 'two_photos') {
           photox[galleryItem.image_1.url] = counter++
           photox[galleryItem.image_2.url] = counter++
+        } else if (item.slice_type === 'three_photos') {
+          photox[galleryItem.image_1.url] = counter++
+          photox[galleryItem.image_2.url] = counter++
+          photox[galleryItem.image_3.url] = counter++
         }
       })
     })
