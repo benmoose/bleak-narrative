@@ -21,6 +21,15 @@
 
 .title {
   margin: 0;
+  font-size: 1.6em;
+}
+
+.titleLink,
+.titleLink:hover,
+.titleLink:active,
+.titleLink:focus {
+  color: black;
+  text-decoration: none;
 }
 
 .timestamp {

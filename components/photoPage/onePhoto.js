@@ -40,14 +40,9 @@ const PhotoWithCaption = ({ imageURL, imageAlt, children, onImageClick }) => {
 
 function getImageComponent ({ imageURL, imageAlt, onImageClick }) {
   const ImgC = () => <img src={imageURL} alt={imageAlt} className={styles.img} />
-  if (!onImageClick) {
-    return ImgC
-  }
-  return () => (
-    <a onClick={onImageClick}>
-      <ImgC />
-    </a>
-  )
+  return onImageClick
+    ? () => <a onClick={onImageClick}><ImgC /></a>
+    : () => <ImgC />
 }
 
 export default OnePhotos

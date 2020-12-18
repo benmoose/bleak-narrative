@@ -11,7 +11,11 @@ const StoryPage = ({ document }) => {
         authorLink={document.data.author_profile.embed_url}
         timestamp={document.first_publication_date}
       />
-      <RichText content={document.data.story_content} />
+      {
+        document.data.body.map(slice => (
+          slice.items.map(i => <RichText content={i.text} />)
+        ))
+      }
     </>
   )
 }

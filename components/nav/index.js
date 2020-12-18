@@ -20,7 +20,6 @@ const Nav = () => {
           </NextLink>
         </div>
         <div className={c(styles.navSection, styles.textRight)}>
-          <Link className={styles.navLink} href='/community'>Community</Link>
           <a target='_blank' href='https://soundcloud.com/bleaknarrative'>
             <img className={styles.soundcloud} src={soundcloudLogo} />
           </a>
