@@ -12,7 +12,6 @@ const SLICE_TYPES = ['one_photo', 'two_photos', 'three_photos']
 const PhotoPage = ({ document }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [initialPhoto, setInitialPhoto] = useState(0)
-  console.log(document.data.body[0])
 
   const urlToGalleryIndex = getPhotoURLToGalleryIndexMap(document.data.body)
   const photos = getPhotosDataForGallery(document.data.body).map(img => ({
