@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactBnbGallery from 'react-bnb-gallery'
 
 import PageHeader from '../pageHeader'
+import RichText from '../richText'
 import OnePhoto from './onePhoto'
 import TwoPhotos from './twoPhotos'
 import ThreePhotos from './threePhotos'
@@ -11,6 +12,7 @@ const SLICE_TYPES = ['one_photo', 'two_photos', 'three_photos']
 const PhotoPage = ({ document }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [initialPhoto, setInitialPhoto] = useState(0)
+  console.log(document.data.body[0])
 
   const urlToGalleryIndex = getPhotoURLToGalleryIndexMap(document.data.body)
   const photos = getPhotosDataForGallery(document.data.body).map(img => ({
@@ -43,6 +45,8 @@ const PhotoPage = ({ document }) => {
       {
         document.data.body.map((slice, i) => {
           switch (slice.slice_type) {
+            case 'text':
+              return <RichText content={slice.primary.content} />
             case 'one_photo':
               return <OnePhoto key={i} items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
             case 'two_photos':

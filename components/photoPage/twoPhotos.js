@@ -32,10 +32,14 @@ const PhotoElement = ({ image1URL, image2URL, image1Alt, image2Alt, caption, onI
           <Image2 className={styles.image} />
         </div>
       </div>
-      <div className={styles.captionContainer}>
-        <img className={styles.captionIcon} src={CaptionIcon} />
-        <RichText content={caption} />
-      </div>
+      {
+        caption && caption.length > 0 && (
+          <div className={styles.captionContainer}>
+            <img className={styles.captionIcon} src={CaptionIcon} />
+            <RichText content={caption} />
+          </div>
+        )
+      }
     </section>
   )
 }
