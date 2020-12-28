@@ -75,7 +75,7 @@ function getBody (type, document) {
     case 'story':
       return document.data.body.map(s => (
         s.items.map(i => i.text.map(t => t.text).filter(x => !!x))
-      )).join(" ")
+      )).join(' ')
   }
   throw Error(`Cannot get feed-link body for ${type} type`)
 }
@@ -99,7 +99,7 @@ function getLinkText (type) {
     case 'music':
       return 'Listen to the mix'
     case 'photos':
-      return 'See more'
+      return 'Visit the gallery'
     case 'cratedigging':
       return 'Explore the crate'
     default:

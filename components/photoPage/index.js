@@ -40,7 +40,6 @@ const PhotoPage = ({ document }) => {
         showThumbnails={false}
         onClose={() => setIsOpen(false)}
       />
-
       {
         document.data.body.map((slice, i) => {
           switch (slice.slice_type) {

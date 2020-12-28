@@ -29,14 +29,13 @@ const PageHeader = ({ title, timestamp, authorName, authorLink }) => {
 }
 
 function getAuthor (authorName, authorLink) {
-  if (!authorLink) {
-    return authorName
-  }
-  return (
-    <NextLink href={authorLink}>
-      <a target='_blank' className={styles.authorLink}>{authorName}</a>
-    </NextLink>
-  )
+  return authorLink
+    ? (
+      <NextLink href={authorLink}>
+        <a target='_blank' className={styles.authorLink}>{authorName}</a>
+      </NextLink>
+      )
+    : authorName
 }
 
 export default PageHeader
