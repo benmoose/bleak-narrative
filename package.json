@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "lint": "standard --fix",
     "build": "next build",
     "export": "next export",
     "start": "next start"
