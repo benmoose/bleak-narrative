@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.container:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.imgContainer {
+  flex: 1;
+  padding: 0 20px 0 0;
+}
+
+.container:nth-child(odd) .imgContainer {
+  padding: 0 0 0 20px;
+}
+
+.textContainer {
+  flex: 2;
+}
+
+.image {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+}
