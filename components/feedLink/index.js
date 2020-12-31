@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
-import PrismicDOM from 'prismic-dom'
 
 import PageLink from '../link'
 import styles from './feedLink.module.css'
@@ -28,7 +27,9 @@ const FeedLinkContent = ({ id, image, href, timestamp, title, body, linkText, ty
   return (
     <div className={styles.container}>
       <div className={styles.containerA}>
-        <img className={styles.img} src={image} />
+        <Link href={href}>
+          <a><img className={styles.img} src={image} /></a>
+        </Link>
         <section className={styles.textContainer}>
           <h2 className={styles.title}>
             <Link href={href} key={id}><a className={styles.titleLink}>{title}</a></Link>
