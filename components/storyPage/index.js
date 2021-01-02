@@ -1,6 +1,7 @@
 import PageHeader from '../pageHeader'
 import RichText from '../richText'
 import PhotoAndText from './photo-and-text'
+import styles from './storyPage.module.css'
 
 const StoryPage = ({ document }) => {
   return (
@@ -17,10 +18,12 @@ const StoryPage = ({ document }) => {
 }
 
 const TextItems = ({ item }) => <RichText content={item.text} />
+const FullWidthImageItems = ({ item }) => <img className={styles.image} src={item.image.url} />
 
 const SLICE_TYPE_COMPONENTS = {
   "text": TextItems,
   "image___text": PhotoAndText,
+  "full_width_image": FullWidthImageItems,
 }
 
 function getComponentForSlice (slice) {

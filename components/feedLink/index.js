@@ -37,7 +37,7 @@ const FeedLinkContent = ({ id, image, href, timestamp, title, body, linkText, ty
           <small className={styles.timestamp}>{timestamp} / <Link href={`/${type}`}><a className={styles.typeLink}>{type}</a></Link></small>
           {
             body && (
-              <p className={styles.snippet}>{getSnippet(body)}</p>
+              <p className={styles.snippet}>{snippetFromText(body)}</p>
             )
           }
           <div className={styles.linkContainer}>
@@ -75,7 +75,11 @@ function getBody (type, document) {
       return `${document.data.tracks.length} hidden gems for your listening pleasure, uncovered by by ${document.data.author_name}.`
     case 'story':
       return document.data.body.map(s => (
-        s.items.map(i => i.text.map(t => t.text).filter(x => !!x))
+        s.items.map(item => {
+          return item.text
+            ? item.text.map(t => t.text).filter(x => !!x)
+            : ""
+        })
       )).join(' ')
   }
   throw Error(`Cannot get feed-link body for ${type} type`)
@@ -108,7 +112,7 @@ function getLinkText (type) {
   }
 }
 
-function getSnippet (text) {
+function snippetFromText (text) {
   if (!text) {
     return ''
   }

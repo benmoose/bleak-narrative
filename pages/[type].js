@@ -25,7 +25,7 @@ const BleakPageByType = ({ results, page, totalPages }) => {
 export async function getStaticProps ({ params }) {
   const pagesForType = await prismicAPI().then(api => api.query(
     Prismic.Predicates.at('document.type', params.type),
-    { pageSize: 100 }
+    { orderings: '[document.first_publication_date desc]', pageSize: 100 }
   ))
   const { results, page, total_pages } = pagesForType
   const props = { results, page, totalPages: total_pages }

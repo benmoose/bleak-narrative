@@ -1,5 +1,5 @@
 import RichText from '../richText'
-import styles from './photo-and-text.module.css'
+import styles from './storyPage.module.css'
 
 const PhotoAndText = ({ item }) => {
   return (

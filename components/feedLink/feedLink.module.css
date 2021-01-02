@@ -42,6 +42,7 @@
   height: 110px;
   border-radius: 15%;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+  object-fit: cover;
 }
 
 .linkContainer {
