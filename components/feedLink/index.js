@@ -78,7 +78,7 @@ function getBody (type, document) {
         s.items.map(item => {
           return item.text
             ? item.text.map(t => t.text).filter(x => !!x)
-            : ""
+            : ''
         })
       )).join(' ')
   }

@@ -21,9 +21,9 @@ const TextItems = ({ item }) => <RichText content={item.text} />
 const FullWidthImageItems = ({ item }) => <img className={styles.image} src={item.image.url} />
 
 const SLICE_TYPE_COMPONENTS = {
-  "text": TextItems,
-  "image___text": PhotoAndText,
-  "full_width_image": FullWidthImageItems,
+  text: TextItems,
+  image___text: PhotoAndText,
+  full_width_image: FullWidthImageItems
 }
 
 function getComponentForSlice (slice) {
