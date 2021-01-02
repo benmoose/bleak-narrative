@@ -6,15 +6,16 @@ import PageLink from '../link'
 import styles from './feedLink.module.css'
 import rightArrowIcon from '../../public/icons/right-arrow.svg'
 
-const FeedLink = ({ id, type, document }) => {
+const FeedLink = ({ type, document }) => {
   const href = `/${type}/${document.uid}`
   const createdAt = format(parseISO(document.first_publication_date), 'do LLL yyyy')
   return (
     <FeedLinkContent
-      id={id}
       type={type}
       href={href}
       timestamp={createdAt}
+      authorName={document.data.author_name}
+      authorProfile={document.data.author_profile}
       image={getThumbnail(type, document)}
       title={getTitle(type, document)}
       body={getBody(type, document)}
@@ -23,7 +24,7 @@ const FeedLink = ({ id, type, document }) => {
   )
 }
 
-const FeedLinkContent = ({ id, image, href, timestamp, title, body, linkText, type }) => {
+const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProfile, body, linkText, type }) => {
   return (
     <div className={styles.container}>
       <div className={styles.containerA}>
@@ -32,9 +33,15 @@ const FeedLinkContent = ({ id, image, href, timestamp, title, body, linkText, ty
         </Link>
         <section className={styles.textContainer}>
           <h2 className={styles.title}>
-            <Link href={href} key={id}><a className={styles.titleLink}>{title}</a></Link>
+            <Link href={href}>
+              <a className={styles.titleLink}>
+                {title}
+              </a>
+            </Link>
           </h2>
-          <small className={styles.timestamp}>{timestamp} / <Link href={`/${type}`}><a className={styles.typeLink}>{type}</a></Link></small>
+          <div className={styles.metadata}>
+            {timestamp} / <Link href={`/${type}`}><a className={styles.typeLink}>{type}</a></Link> / {getAuthorLink(authorName, authorProfile)}
+          </div>
           {
             body && (
               <p className={styles.snippet}>{snippetFromText(body)}</p>
@@ -110,6 +117,13 @@ function getLinkText (type) {
     default:
       return 'Read more'
   }
+}
+
+function getAuthorLink (authorName, authorProfile) {
+  if (authorProfile && authorProfile.embed_url) {
+    return <Link href={authorProfile.embed_url}><a className={styles.authorLink}>{authorName}</a></Link>
+  }
+  return authorName
 }
 
 function snippetFromText (text) {

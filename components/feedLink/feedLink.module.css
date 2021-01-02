@@ -32,9 +32,15 @@
   text-decoration: none;
 }
 
-.timestamp {
-  display: inline-block;
+.authorName {
+  opacity: .8;
+  color: black;
+}
+
+.metadata {
   margin: 0 0 10px;
+  color: #444;
+  font-family: HeadingFont;
 }
 
 .img {
@@ -47,6 +53,17 @@
 
 .linkContainer {
   text-align: right;
+}
+
+.typeLink,
+.typeLink:hover {
+  color: inherit;
+  text-transform: capitalize;
+}
+
+.authorLink,
+.authorLink:hover {
+  color: inherit;
 }
 
 .linkArrowIcon {
