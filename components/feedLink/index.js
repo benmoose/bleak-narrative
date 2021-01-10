@@ -121,7 +121,7 @@ function getLinkText (type) {
 
 function getAuthorLink (authorName, authorProfile) {
   if (authorProfile && authorProfile.embed_url) {
-    return <Link href={authorProfile.embed_url}><a className={styles.authorLink}>{authorName}</a></Link>
+    return <Link href={authorProfile.embed_url}><a className={styles.authorLink} target="_blank">{authorName}</a></Link>
   }
   return authorName
 }
