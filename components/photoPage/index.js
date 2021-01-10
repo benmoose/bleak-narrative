@@ -44,7 +44,7 @@ const PhotoPage = ({ document }) => {
         document.data.body.map((slice, i) => {
           switch (slice.slice_type) {
             case 'text':
-              return <RichText content={slice.primary.content} />
+              return <RichText key={i} content={slice.primary.content} />
             case 'one_photo':
               return <OnePhoto key={i} items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
             case 'two_photos':

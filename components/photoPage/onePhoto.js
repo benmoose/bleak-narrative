@@ -1,3 +1,4 @@
+import c from 'classnames'
 import CaptionIcon from '../../public/icons/triangle-up.svg'
 import RichText from '../richText'
 import styles from './onePhoto.module.css'
@@ -21,7 +22,7 @@ const PhotoWithCaption = ({ imageURL, imageAlt, children, onImageClick }) => {
   const ImageC = getImageComponent({ imageURL, imageAlt, onImageClick })
   return (
     <section className={styles.container}>
-      <div className={styles.galleryItem}>
+      <div className={c(styles.galleryItem, {[styles.galleryItemFull]: !children})}>
         <div className={styles.imgContainer}>
           <ImageC />
         </div>
