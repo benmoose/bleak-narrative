@@ -12,6 +12,10 @@
   flex: 1;
 }
 
+.navSectionCentre {
+  max-width: 100px;
+}
+
 .textRight {
   text-align: right;
 }
@@ -32,8 +36,15 @@
   text-decoration: none;
 }
 
+.pageLink, .pageLink:hover,
 .brandLink, .brandLink:hover {
   text-decoration: none;
+}
+
+.pageLink {
+  margin-right: 15px;
+  font-family: HeadingFont;
+  font-size: .75em;
 }
 
 .navLink {
@@ -52,6 +63,8 @@
   opacity: .9;
 }
 
-@media only screen and (min-width: 778px) {
-
+@media only screen and (max-width: 562px) {
+  .pageLinkContainer {
+    display: none;
+  }
 }
