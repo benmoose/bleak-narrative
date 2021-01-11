@@ -1,17 +1,17 @@
 @font-face {
   font-family: BodyFont;
-  src: url('/font/Poppins-Regular.ttf') format('truetype');
+  src: url('/font/Montserrat-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: BodyFont;
-  src: url('/font/Poppins-Bold.ttf') format('truetype');
+  src: url('/font/Montserrat-SemiBold.ttf') format('truetype');
   font-weight: bold;
 }
 
 @font-face {
   font-family: HeadingFont;
-  src: url('/font/FredokaOne-Regular.ttf') format('truetype');
+  src: url('/font/KronaOne-Regular.ttf') format('truetype');
 }
 
 body {
@@ -34,7 +34,7 @@ small {
 
 h1, h2 {
   font-family: 'HeadingFont', Arial, Helvetica, sans-serif;
-  font-size: 2.3em;
+  font-size: 2.2em;
   line-height: 1.3em;
   letter-spacing: 0.035em;
   margin-bottom: 50px;
@@ -50,6 +50,6 @@ h2 {
   }
 
   h1 {
-    font-size: 2.7em;
+    font-size: 2.5em;
   }
 }

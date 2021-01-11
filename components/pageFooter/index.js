@@ -16,6 +16,9 @@ const PageFooter = () => {
             <Link href='/community'><a>Community</a></Link>
           </li>
           <li>
+            <Link href='/about'><a>About</a></Link>
+          </li>
+          <li>
             <Link href='/contact'><a>Contact</a></Link>
           </li>
           <li>

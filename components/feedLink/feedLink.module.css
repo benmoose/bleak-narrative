@@ -21,7 +21,7 @@
 
 .title {
   margin: 0;
-  font-size: 1.6em;
+  font-size: 1.2em;
 }
 
 .titleLink,
@@ -39,6 +39,7 @@
 
 .metadata {
   margin: 0 0 10px;
+  font-size: 0.8em;
   color: #444;
   font-family: HeadingFont;
 }
