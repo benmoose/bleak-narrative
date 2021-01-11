@@ -8,12 +8,11 @@ import rightArrowIcon from '../../public/icons/right-arrow.svg'
 
 const FeedLink = ({ type, document }) => {
   const href = `/${type}/${document.uid}`
-  const createdAt = format(parseISO(document.first_publication_date), 'do LLL yyyy')
   return (
     <FeedLinkContent
       type={type}
       href={href}
-      timestamp={createdAt}
+      timestamp={document.data.publication_date_override || document.first_publication_date}
       authorName={document.data.author_name}
       authorProfile={document.data.author_profile}
       image={getThumbnail(type, document)}
@@ -25,6 +24,7 @@ const FeedLink = ({ type, document }) => {
 }
 
 const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProfile, body, linkText, type }) => {
+  const publicationDate = format(parseISO(timestamp), 'do LLL yyyy')
   return (
     <div className={styles.container}>
       <div className={styles.containerA}>
@@ -40,7 +40,7 @@ const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProf
             </Link>
           </h2>
           <div className={styles.metadata}>
-            {timestamp} / <Link href={`/${type}`}><a className={styles.typeLink}>{type}</a></Link> / {getAuthorLink(authorName, authorProfile)}
+            {publicationDate} / <Link href={`/${type}`}><a className={styles.typeLink}>{type}</a></Link> / {getAuthorLink(authorName, authorProfile)}
           </div>
           {
             body && (
