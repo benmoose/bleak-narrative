@@ -14,6 +14,10 @@
   src: url('/font/KronaOne-Regular.ttf') format('truetype');
 }
 
+/*
+ * Default CSS
+ */
+
 body {
   font-size: 1rem;
   background: #fdfcff;
@@ -29,27 +33,31 @@ p {
 
 small {
   font-family: 'HeadingFont', monospace;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 h1, h2 {
   font-family: 'HeadingFont', Arial, Helvetica, sans-serif;
-  font-size: 2.2em;
+  font-size: 2.1em;
   line-height: 1.3em;
   letter-spacing: 0.035em;
   margin-bottom: 50px;
 }
 
 h2 {
-  font-size: 2.1em;
+  font-size: 2em;
 }
+
+/*
+ * Desktop CSS
+ */
 
 @media only screen and (min-width: 778px) {
   body {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   h1 {
-    font-size: 2.5em;
+    font-size: 2.6em;
   }
 }

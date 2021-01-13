@@ -1,6 +1,6 @@
 .container {
   display: block;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 .containerA,
@@ -76,6 +76,7 @@
   .containerA:hover,
   .containerA:active {
     flex-direction: row;
+    margin-bottom: 80px;
   }
 
   .textContainer {

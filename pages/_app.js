@@ -10,7 +10,7 @@ export default Layout(({ Component, pageProps }) => {
     <>
       <Helmet>
         <title>Bleak Narrative</title>
-        <link rel='icon' type='image/png' href='/img/bleak-icon.png' />
+        <link rel='icon' type='image/png' href='/img/bleak-fav.png' />
       </Helmet>
       <Component {...pageProps} />
     </>
