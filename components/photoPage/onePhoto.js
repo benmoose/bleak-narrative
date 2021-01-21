@@ -22,7 +22,7 @@ const PhotoWithCaption = ({ imageURL, imageAlt, children, onImageClick }) => {
   const ImageC = getImageComponent({ imageURL, imageAlt, onImageClick })
   return (
     <section className={styles.container}>
-      <div className={c(styles.galleryItem, {[styles.galleryItemFull]: !children})}>
+      <div className={c(styles.galleryItem, { [styles.galleryItemFull]: !children })}>
         <div className={styles.imgContainer}>
           <ImageC />
         </div>

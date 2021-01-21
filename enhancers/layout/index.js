@@ -1,6 +1,6 @@
 import React from 'react'
 import c from 'classnames'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 
 import Nav from '../../components/nav'
 import PageFooter from '../../components/pageFooter'

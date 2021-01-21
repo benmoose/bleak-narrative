@@ -14,9 +14,9 @@ const Nav = ({ type }) => {
       <div className={styles.navContainer}>
         <div className={c(styles.navSection)}>
           <div className={styles.pageLinkContainer}>
-            <Link href='/music' className={c(styles.pageLink, {[styles.active]: type === "music"})}>Music</Link>
-            <Link href='/photos' className={c(styles.pageLink, {[styles.active]: type === "photos"})}>Art</Link>
-            <Link href='/story' className={c(styles.pageLink, {[styles.active]: type === "story"})}>Stories</Link>
+            <Link href='/music' className={c(styles.pageLink, { [styles.active]: type === 'music' })}>Music</Link>
+            <Link href='/photos' className={c(styles.pageLink, { [styles.active]: type === 'photos' })}>Art</Link>
+            <Link href='/story' className={c(styles.pageLink, { [styles.active]: type === 'story' })}>Stories</Link>
           </div>
         </div>
 
