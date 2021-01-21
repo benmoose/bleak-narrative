@@ -29,7 +29,7 @@ const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProf
     <div className={styles.container}>
       <div className={styles.containerA}>
         <Link href={href}>
-          <a><img className={styles.img} src={image} /></a>
+          <a className={styles.imgContainer}><img className={styles.img} src={image} /></a>
         </Link>
         <section className={styles.textContainer}>
           <h2 className={styles.title}>

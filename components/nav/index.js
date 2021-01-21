@@ -8,15 +8,15 @@ import bleakLogo from '../../public/img/bleak-icon.png'
 import soundcloudLogo from '../../public/icons/musical-note.svg'
 import instagramLogo from '../../public/icons/instagram.svg'
 
-const Nav = () => {
+const Nav = ({ type }) => {
   return (
     <nav className={styles.background}>
       <div className={styles.navContainer}>
         <div className={c(styles.navSection)}>
           <div className={styles.pageLinkContainer}>
-            <Link href='/music' className={styles.pageLink}>Music</Link>
-            <Link href='/photos' className={styles.pageLink}>Art</Link>
-            <Link href='/story' className={styles.pageLink}>Stories</Link>
+            <Link href='/music' className={c(styles.pageLink, {[styles.active]: type === "music"})}>Music</Link>
+            <Link href='/photos' className={c(styles.pageLink, {[styles.active]: type === "photos"})}>Art</Link>
+            <Link href='/story' className={c(styles.pageLink, {[styles.active]: type === "story"})}>Stories</Link>
           </div>
         </div>
 
