@@ -15,7 +15,7 @@ const WithLayout = Page => props => {
     <>
       <div className={styles.navContainer}>
         <div className={c(styles.navInner, styles.maxPageWidth)}>
-          <Nav type={router.query.type} />
+          <Nav pathname={router.pathname} />
         </div>
       </div>
       <main className={c(styles.main, styles.maxPageWidth)}>

@@ -79,7 +79,7 @@ function getBody (type, document) {
     case 'photos':
       return ''
     case 'cratedigging':
-      return `${document.data.tracks.length} hidden gems for your listening pleasure, uncovered by by ${document.data.author_name}.`
+      return `${document.data.tracks.length} hidden gem${document.data.tracks.length === 1 ? "" : "s"} for your listening pleasure, uncovered by by ${document.data.author_name}.`
     case 'story':
       return document.data.body.map(s => (
         s.items.map(item => {
