@@ -18,12 +18,12 @@ const StoryPage = ({ document }) => {
 }
 
 const TextItems = ({ item }) => <RichText content={item.text} />
-const FullWidthImageItems = ({ item }) => <img className={styles.image} src={item.image.url} />
+const FullWidthImageItem = ({ item }) => <img className={styles.image} src={item.image.url} />
 
 const SLICE_TYPE_COMPONENTS = {
   text: TextItems,
   image___text: PhotoAndText,
-  full_width_image: FullWidthImageItems
+  full_width_image: FullWidthImageItem
 }
 
 function getComponentForSlice (slice) {

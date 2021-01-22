@@ -15,9 +15,8 @@ const Nav = ({ pathname }) => {
         <div className={c(styles.navSection)}>
           <div className={styles.pageLinkContainer}>
             <Link href='/music' className={c(styles.pageLink, { [styles.active]: pathname === '/music' })}>Music</Link>
-            <Link href='/photos' className={c(styles.pageLink, { [styles.active]: pathname === '/photos' })}>Art</Link>
-            <Link href='/story' className={c(styles.pageLink, { [styles.active]: pathname === '/story' })}>Stories</Link>
-            <Link href='/cratedigging' className={c(styles.pageLink, { [styles.active]: pathname === '/cratedigging' })}>Cratedigging</Link>
+            <Link href='/art' className={c(styles.pageLink, { [styles.active]: pathname === '/art' })}>Art</Link>
+            <Link href='/stories' className={c(styles.pageLink, { [styles.active]: pathname === '/stories' })}>Stories</Link>
           </div>
         </div>
 
@@ -31,7 +30,7 @@ const Nav = ({ pathname }) => {
 
         <div className={c(styles.navSection, styles.textRight)}>
           <Link href='/about' className={c(styles.pageLink, { [styles.active]: pathname === '/about' })}>About</Link>
-          <Link href='/community' className={c(styles.pageLink, { [styles.active]: pathname === '/about' })}>Community</Link>
+          <Link href='/community' className={c(styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</Link>
           <a target='_blank' href='https://soundcloud.com/bleaknarrative'>
             <img className={c(styles.iconLink, styles.soundcloud)} src={soundcloudLogo} />
           </a>

@@ -62,11 +62,9 @@ function getTitle (type, document) {
   switch (type) {
     case 'music':
       return document.data.title[0].text
-    case 'photos':
+    case 'art':
       return document.data.title[0].text
-    case 'cratedigging':
-      return 'Crate digging ' + format(parseISO(document.first_publication_date), 'LLLL yy')
-    case 'story':
+    case 'stories':
       return document.data.title[0].text
   }
   throw Error(`Cannot get feed-link title for ${type} type`)
@@ -75,12 +73,10 @@ function getTitle (type, document) {
 function getBody (type, document) {
   switch (type) {
     case 'music':
-      return document.data.description[0].text
-    case 'photos':
+      return 'document.data.description[0].text'
+    case 'art':
       return ''
-    case 'cratedigging':
-      return `${document.data.tracks.length} hidden gem${document.data.tracks.length === 1 ? "" : "s"} for your listening pleasure, uncovered by by ${document.data.author_name}.`
-    case 'story':
+    case 'stories':
       return document.data.body.map(s => (
         s.items.map(item => {
           return item.text
@@ -95,12 +91,10 @@ function getBody (type, document) {
 function getThumbnail (type, document) {
   switch (type) {
     case 'music':
-      return document.data.soundcloud_link.thumbnail_url
-    case 'photos':
+      return getMusicThumbnail(document)
+    case 'art':
       return document.data.feed_thumbnail.url
-    case 'cratedigging':
-      return document.data.feed_image.url
-    case 'story':
+    case 'stories':
       return document.data.feed_thumbnail.url
   }
   throw Error(`Cannot get feed-link thumbnail for ${type} type`)
@@ -110,10 +104,8 @@ function getLinkText (type) {
   switch (type) {
     case 'music':
       return 'Listen to the mix'
-    case 'photos':
+    case 'art':
       return 'Visit the gallery'
-    case 'cratedigging':
-      return 'Explore the crate'
     default:
       return 'Read more'
   }
@@ -135,6 +127,21 @@ function snippetFromText (text) {
     return text
   }
   return words.slice(0, 32).join(' ') + '...'
+}
+
+function getMusicThumbnail (document) {
+  const documentData = document.data
+  console.log(document)
+  if (documentData.feed_thumbnail.url) {
+    return documentData.feed_thumbnail.url
+  }
+  if (documentData.body.length > 0) {
+    const firstSlice = documentData.body[0]
+    if (firstSlice.items.length > 0) {
+      return firstSlice.items[0].track.thumbnail_url
+    }
+  }
+  throw Error(`No thumbnail found for music feed item ${document.uid}.`)
 }
 
 export default FeedLink

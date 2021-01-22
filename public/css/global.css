@@ -48,6 +48,12 @@ h2 {
   font-size: 2em;
 }
 
+.image {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+}
+
 /*
  * Desktop CSS
  */

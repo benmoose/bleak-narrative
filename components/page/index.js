@@ -12,11 +12,9 @@ function pageComponentForType (type) {
   switch (type) {
     case 'music':
       return MusicPage
-    case 'cratedigging':
-      return CratediggingPage
-    case 'photos':
+    case 'art':
       return PhotoPage
-    case 'story':
+    case 'stories':
       return StoryPage
   }
   throw Error(`No page component for ${type} page type`)
