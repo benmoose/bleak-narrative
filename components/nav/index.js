@@ -31,10 +31,10 @@ const Nav = ({ pathname }) => {
         <div className={c(styles.navSection, styles.textRight)}>
           <Link href='/about' className={c(styles.pageLink, { [styles.active]: pathname === '/about' })}>About</Link>
           <Link href='/community' className={c(styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</Link>
-          <a target='_blank' href='https://soundcloud.com/bleaknarrative'>
+          <a target='_blank' rel='noreferrer' href='https://soundcloud.com/bleaknarrative'>
             <img className={c(styles.iconLink, styles.soundcloud)} src={soundcloudLogo} />
           </a>
-          <a target='_blank' href='https://instagram.com/bleaknarrative'>
+          <a target='_blank' rel='noreferrer' href='https://instagram.com/bleaknarrative'>
             <img className={c(styles.iconLink, styles.instagram)} src={instagramLogo} />
           </a>
         </div>

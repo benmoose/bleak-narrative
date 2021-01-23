@@ -1,4 +1,3 @@
-import CratediggingPage from '../cratediggingPage'
 import MusicPage from '../musicPage'
 import PhotoPage from '../photoPage'
 import StoryPage from '../storyPage'

@@ -17,7 +17,7 @@ const FeedLink = ({ type, document }) => {
       authorProfile={document.data.author_profile}
       image={getThumbnail(type, document)}
       title={getTitle(type, document)}
-      body={getBody(type, document)}
+      // body={getBody(type, document)}
       linkText={getLinkText(type)}
     />
   )
@@ -131,7 +131,6 @@ function snippetFromText (text) {
 
 function getMusicThumbnail (document) {
   const documentData = document.data
-  console.log(document)
   if (documentData.feed_thumbnail.url) {
     return documentData.feed_thumbnail.url
   }

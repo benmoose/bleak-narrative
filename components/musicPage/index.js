@@ -1,11 +1,8 @@
 import React from 'react'
 
-import linkIcon from '../../public/icons/link.svg'
 import SoundcloudPlayer from '../soundcloudPlayer'
-import Link from '../link'
 import RichText from '../richText'
 import PageHeader from '../pageHeader'
-import styles from './musicPage.module.css'
 
 const MusicPage = ({ document }) => {
   const title = document.data.title[0].text
@@ -23,11 +20,11 @@ const MusicPage = ({ document }) => {
       />
 
       {
-        body.map(slice => slice.items.map(sliceItem => (
-          <>
+        body.map(slice => slice.items.map((sliceItem, i) => (
+          <React.Fragment key={i}>
             <SoundcloudPlayer src={sliceItem.track.embed_url} />
             <RichText content={sliceItem.track_description} />
-          </>
+          </React.Fragment>
         )))
       }
     </>

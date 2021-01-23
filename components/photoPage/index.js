@@ -55,7 +55,7 @@ const PhotoPage = ({ document }) => {
             case 'photo___text':
               return <PhotoAndText key={i} items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
             case 'full_width_image':
-              return slice.items.map(item => <FullWidthImageItem item={item} />)
+              return slice.items.map((item, i) => <FullWidthImageItem key={i} item={item} />)
             default:
               throw Error(`No component for photo-page body slice of type ${slice.slice_type}`)
           }
@@ -71,8 +71,8 @@ function getPhotosDataForGallery (body) {
   const photox = []
   body
     .filter(item => SLICE_TYPES.includes(item.slice_type))
-    .map(item => {
-      item.items.map(galleryItem => {
+    .map(item =>
+      item.items.forEach(galleryItem => {
         if (item.slice_type === 'one_photo') {
           photox.push(galleryItem.image)
         } else if (item.slice_type === 'two_photos') {
@@ -88,7 +88,7 @@ function getPhotosDataForGallery (body) {
           photox.push(galleryItem.image)
         }
       })
-    })
+    )
   return photox
 }
 
@@ -97,8 +97,8 @@ function getPhotoURLToGalleryIndexMap (body) {
   let counter = 0
   body
     .filter(item => SLICE_TYPES.includes(item.slice_type))
-    .map(item => {
-      item.items.map(galleryItem => {
+    .map(item =>
+      item.items.forEach(galleryItem => {
         if (item.slice_type === 'one_photo') {
           photox[galleryItem.image.url] = counter++
         } else if (item.slice_type === 'two_photos') {
@@ -114,7 +114,7 @@ function getPhotoURLToGalleryIndexMap (body) {
           photox[galleryItem.image.url] = counter++
         }
       })
-    })
+    )
   return photox
 }
 
