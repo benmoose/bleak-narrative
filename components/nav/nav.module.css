@@ -99,8 +99,8 @@
   width: 240px;
   min-height: 100%;
   box-shadow: 1px 2px 7px rgba(0, 0, 0, .16);
-  z-index: 10;
   transition: left 350ms;
+  z-index: 10;
 }
 
 .mobileNavOpen {
@@ -133,9 +133,10 @@
   border: 0;
   outline: 0;
   background: none;
+  overflow: visible;
 }
 
-.closeIcon {
+.closeIconButton {
   float: right;
 }
 

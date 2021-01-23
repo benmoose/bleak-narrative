@@ -62,7 +62,7 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
   return [
     <div className={c(styles.mobileNavContainer, {[styles.mobileNavOpen]: open})}>
       <div className={styles.mobileNavHead}>
-        <button className={c(styles.iconButton, styles.closeIcon)} onClick={requestCloseMobileNav}>
+        <button className={c(styles.iconButton, styles.closeIconButton)} onClick={requestCloseMobileNav}>
           <img className={styles.closeIcon} src={ArrowLeft} />
         </button>
       </div>
