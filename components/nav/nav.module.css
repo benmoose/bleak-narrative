@@ -36,20 +36,28 @@
   text-decoration: none;
 }
 
+.desktopOnly {
+  display: none;
+}
+
+.mobileOnly {
+  display: inline-block;
+}
+
 .pageLink, .pageLink:hover,
 .brandLink, .brandLink:hover {
   text-decoration: none;
 }
 
 .pageLink {
-  margin-right: 15px;
   font-family: HeadingFont;
   font-size: .75em;
+  margin-right: 15px;
 }
 
 .active {
   pointer-events: none;
-  opacity: .6;
+  opacity: .5;
 }
 
 .navLink {
@@ -79,8 +87,70 @@
   box-sizing: content-box;
 }
 
-@media only screen and (max-width: 562px) {
-  .pageLinkContainer {
+/* Mobile Nav */
+
+.mobileNavContainer {
+  display: block;
+  position: absolute;
+  background: white;
+  top: 0;
+  left: -240px;
+  height: 100vh;
+  width: 240px;
+  min-height: 100%;
+  box-shadow: 1px 2px 7px rgba(0, 0, 0, .16);
+  z-index: 10;
+  transition: left 400ms;
+}
+
+.mobileNavOpen {
+  left: 0;
+}
+
+.mobileNavLinkContainer {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileNavLink {
+  padding: 15px;
+  width: 100%;
+}
+
+.mobileNavHead {
+  padding: 40px 40px 0;
+  margin: 0 0 80px;
+}
+
+.iconButton {
+  border: 0;
+  outline: 0;
+  background: none;
+}
+
+.closeIcon {
+  float: right;
+}
+
+.closeIcon {
+  width: 32px;
+}
+
+.burgerMenuIcon {
+  width: 32px;
+}
+
+@media only screen and (min-width: 778px) {
+  .desktopOnly {
+    display: inline-block;
+  }
+
+  .mobileOnly {
+    display: none;
+  }
+
+  .mobileNavContainer {
     display: none;
   }
 }

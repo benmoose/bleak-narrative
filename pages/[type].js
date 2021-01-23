@@ -24,7 +24,7 @@ const BleakPageByType = ({ results, page, totalPages }) => {
     id={doc.uid}
     type={doc.type}
     document={doc}
-                                  />)
+  />)
   return [TypeDesc, Feed]
 }
 
