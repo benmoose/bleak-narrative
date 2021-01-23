@@ -1,6 +1,6 @@
 .container {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 .containerA,
@@ -10,8 +10,7 @@
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  color: inherit;
-  text-decoration: inherit;
+  margin: 0 auto;
 }
 
 .textContainer {
@@ -21,7 +20,7 @@
 
 .title {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 .titleLink,
@@ -32,26 +31,29 @@
   text-decoration: none;
 }
 
-.authorName {
-  opacity: .8;
-  color: black;
-}
-
-.metadata {
-  margin: 0 0 10px;
-  font-size: 0.8em;
-  color: #444;
+.author {
+  display: block;
   font-family: HeadingFont;
 }
 
-.imgContainer {
-  display: block;
-  margin: 20px auto;
+.authorName {
+  opacity: .8;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.metadata {
+  text-align: right;
+}
+
+.imgContainer,
+.author {
+  margin: 0 0 20px;
 }
 
 .img {
-  width: 130px;
-  height: 130px;
+  width: 85vw;
+  height: 85vw;
   border-radius: 15%;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
   object-fit: cover;
@@ -64,19 +66,15 @@
 .typeLink,
 .typeLink:hover {
   color: inherit;
+  font-weight: bold;
   text-transform: capitalize;
-}
-
-.authorLink,
-.authorLink:hover {
-  color: inherit;
 }
 
 .linkArrowIcon {
   width: 20px;
 }
 
-@media only screen and (min-width: 778px) {
+@media only screen and (min-width: 500px) {
   .containerA,
   .containerA:hover,
   .containerA:active {
@@ -95,6 +93,6 @@
   }
 
   .textContainer {
-    margin-left: 15px;
+    margin-left: 30px;
   }
 }

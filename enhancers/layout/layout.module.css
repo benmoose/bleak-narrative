@@ -27,6 +27,8 @@
   margin-top: 100px;
 }
 
-@media only screen and (min-width: 778px) {
-
+@media only screen and (max-width: 778px) and (min-width: 500px) {
+  .maxPageWidth {
+    padding: 0 40px;
+  }
 }
