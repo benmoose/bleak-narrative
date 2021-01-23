@@ -36,20 +36,28 @@
   text-decoration: none;
 }
 
+.desktopOnly {
+  display: none;
+}
+
+.mobileOnly {
+  display: inline-block;
+}
+
 .pageLink, .pageLink:hover,
 .brandLink, .brandLink:hover {
   text-decoration: none;
 }
 
 .pageLink {
-  margin-right: 15px;
   font-family: HeadingFont;
   font-size: .75em;
+  margin-right: 15px;
 }
 
 .active {
   pointer-events: none;
-  opacity: .6;
+  opacity: .5;
 }
 
 .navLink {
@@ -79,8 +87,101 @@
   box-sizing: content-box;
 }
 
-@media only screen and (max-width: 562px) {
-  .pageLinkContainer {
+/* Mobile Nav */
+
+.mobileNavContainer {
+  overflow-y: scroll;
+  display: block;
+  position: absolute;
+  background: white;
+  top: 0;
+  bottom: 0;
+  left: -240px;
+  height: 100vh;
+  width: 240px;
+  box-shadow: 1px 2px 7px rgba(0, 0, 0, .16);
+  transition: left 350ms;
+  z-index: 10;
+}
+
+.mobileNavOpen {
+  left: 0;
+}
+
+.mobileNavLinkContainer {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileNavLink {
+  margin: 0;
+  padding: 15px 15px 15px 30px;
+  width: 100%;
+}
+
+.mobileNavHead {
+  padding: 40px 40px 0;
+  margin: 0 0 80px;
+}
+
+.mobileNavDivider {
+  margin: 30px;
+  border: black 2px solid;
+  opacity: .9;
+  outline: 0;
+  width: 10px;
+}
+
+.iconButton {
+  border: 0;
+  outline: 0;
+  background: none;
+  overflow: visible;
+}
+
+.closeIconButton {
+  float: right;
+}
+
+.closeIcon {
+  width: 32px;
+}
+
+.burgerMenuIcon {
+  width: 30px;
+  position: relative;
+  top: 5px;
+}
+
+.mobileNavOverlay {
+  z-index: 9;
+  background: white;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  pointer-events: all;
+  transition: opacity 350ms;
+}
+
+.mobileNavOverlayOff {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media only screen and (min-width: 778px) {
+  .desktopOnly {
+    display: inline-block;
+  }
+
+  .mobileOnly {
+    display: none;
+  }
+
+  .mobileNavContainer {
     display: none;
   }
 }

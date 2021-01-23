@@ -19,12 +19,14 @@ const BleakPageByType = ({ results, page, totalPages }) => {
 
   const router = useRouter()
   const TypeDesc = <FeedDescription content={typeDescription[router.query.type]} />
-  const Feed = results.map(doc => <FeedLink
-    key={doc.uid}
-    id={doc.uid}
-    type={doc.type}
-    document={doc}
-                                  />)
+  const Feed = results.map(doc => (
+    <FeedLink
+      key={doc.uid}
+      id={doc.uid}
+      type={doc.type}
+      document={doc}
+    />
+  ))
   return [TypeDesc, Feed]
 }
 
