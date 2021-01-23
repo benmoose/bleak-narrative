@@ -37,8 +37,11 @@ const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProf
               </a>
             </Link>
           </h2>
+          <div className={styles.author}>
+            by {getAuthorLink(authorName, authorProfile)}
+          </div>
           <div className={styles.metadata}>
-            {publicationDate} / <Link href={`/${type}`}><a className={styles.typeLink}>{type}</a></Link> / {getAuthorLink(authorName, authorProfile)}
+            {publicationDate} / <Link href={`/${type}`}><a className={styles.typeLink}>{type}</a></Link>
           </div>
         </section>
       </div>
@@ -101,7 +104,7 @@ function getLinkText (type) {
 
 function getAuthorLink (authorName, authorProfile) {
   if (authorProfile && authorProfile.embed_url) {
-    return <Link href={authorProfile.embed_url}><a className={styles.authorLink} target='_blank'>{authorName}</a></Link>
+    return <Link href={authorProfile.embed_url}><a target='_blank'>{authorName}</a></Link>
   }
   return authorName
 }
