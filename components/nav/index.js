@@ -45,13 +45,13 @@ const DesktopNav = ({ pathname, requestOpenMobileNav }) => {
           <div className={styles.desktopOnly}>
             <StyledLink href='/about' className={c(styles.pageLink, { [styles.active]: pathname === '/about' })}>About</StyledLink>
             <StyledLink href='/community' className={c(styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</StyledLink>
+            <a target='_blank' rel='noreferrer' href='https://soundcloud.com/bleaknarrative'>
+              <img className={c(styles.iconLink, styles.soundcloud)} src={SoundcloudLogo} />
+            </a>
+            <a target='_blank' rel='noreferrer' href='https://instagram.com/bleaknarrative'>
+              <img className={c(styles.iconLink, styles.instagram)} src={InstagramLogo} />
+            </a>
           </div>
-          <a target='_blank' rel='noreferrer' href='https://soundcloud.com/bleaknarrative'>
-            <img className={c(styles.iconLink, styles.soundcloud)} src={SoundcloudLogo} />
-          </a>
-          <a target='_blank' rel='noreferrer' href='https://instagram.com/bleaknarrative'>
-            <img className={c(styles.iconLink, styles.instagram)} src={InstagramLogo} />
-          </a>
         </div>
       </div>
     </nav>
@@ -83,7 +83,33 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
           <StyledLink onClick={requestCloseMobileNav} href='/community' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</StyledLink>
         </li>
       </ul>
-    </div>
+
+      <ul className={c(styles.mobileNavLinkContainer, styles.mobileNavLinkContainerBottom)}>
+        <li>
+          <StyledLink
+            onClick={requestCloseMobileNav}
+            target='_blank'
+            rel='noreferrer'
+            href='https://instagram.com/bleaknarrative'
+            className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}
+          >
+            Soundcloud
+          </StyledLink>
+        </li>
+        <li>
+          <StyledLink
+            onClick={requestCloseMobileNav}
+            target='_blank'
+            rel='noreferrer'
+            href='https://instagram.com/bleaknarrative'
+            className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}
+          >
+            Instagram
+          </StyledLink>
+        </li>
+      </ul>
+    </div>,
+    <div className={c(styles.mobileNavOverlay, { [styles.mobileNavOverlayOff]: !open })} onClick={requestCloseMobileNav} />
   ]
 }
 
