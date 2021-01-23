@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import c from 'classnames'
 
@@ -14,7 +14,7 @@ const Nav = ({ pathname }) => {
   const [open, setOpen] = useState(false)
   return [
     <DesktopNav pathname={pathname} requestOpenMobileNav={() => setOpen(true)} />,
-    <MobileNav pathname={pathname} open={open} requestCloseMobileNav={() => setOpen(false)} />,
+    <MobileNav pathname={pathname} open={open} requestCloseMobileNav={() => setOpen(false)} />
   ]
 }
 
@@ -60,12 +60,13 @@ const DesktopNav = ({ pathname, requestOpenMobileNav }) => {
 
 const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
   return [
-    <div className={c(styles.mobileNavContainer, {[styles.mobileNavOpen]: open})}>
+    <div className={c(styles.mobileNavContainer, { [styles.mobileNavOpen]: open })}>
       <div className={styles.mobileNavHead}>
         <button className={c(styles.iconButton, styles.closeIconButton)} onClick={requestCloseMobileNav}>
           <img className={styles.closeIcon} src={ArrowLeft} />
         </button>
       </div>
+
       <ul className={styles.mobileNavLinkContainer}>
         <li>
           <StyledLink onClick={requestCloseMobileNav} href='/music' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}>Music</StyledLink>
@@ -84,7 +85,9 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
         </li>
       </ul>
 
-      <ul className={c(styles.mobileNavLinkContainer, styles.mobileNavLinkContainerBottom)}>
+      <hr className={styles.mobileNavDivider} />
+
+      <ul className={styles.mobileNavLinkContainer}>
         <li>
           <StyledLink
             onClick={requestCloseMobileNav}

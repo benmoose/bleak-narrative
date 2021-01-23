@@ -90,14 +90,15 @@
 /* Mobile Nav */
 
 .mobileNavContainer {
+  overflow-y: scroll;
   display: block;
   position: absolute;
   background: white;
   top: 0;
+  bottom: 0;
   left: -240px;
   height: 100vh;
   width: 240px;
-  min-height: 100%;
   box-shadow: 1px 2px 7px rgba(0, 0, 0, .16);
   transition: left 350ms;
   z-index: 10;
@@ -113,20 +114,23 @@
   padding: 0;
 }
 
-.mobileNavLinkContainerBottom {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 40px;
-}
-
 .mobileNavLink {
-  padding: 15px;
+  margin: 0;
+  padding: 15px 15px 15px 30px;
   width: 100%;
 }
 
 .mobileNavHead {
   padding: 40px 40px 0;
   margin: 0 0 80px;
+}
+
+.mobileNavDivider {
+  margin: 30px;
+  border: black 2px solid;
+  opacity: .9;
+  outline: 0;
+  width: 10px;
 }
 
 .iconButton {
@@ -146,6 +150,8 @@
 
 .burgerMenuIcon {
   width: 30px;
+  position: relative;
+  top: 5px;
 }
 
 .mobileNavOverlay {
