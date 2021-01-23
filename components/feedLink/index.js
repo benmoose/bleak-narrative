@@ -17,13 +17,11 @@ const FeedLink = ({ type, document }) => {
       authorProfile={document.data.author_profile}
       image={getThumbnail(type, document)}
       title={getTitle(type, document)}
-      // body={getBody(type, document)}
-      linkText={getLinkText(type)}
     />
   )
 }
 
-const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProfile, body, linkText, type }) => {
+const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProfile, type }) => {
   const publicationDate = format(parseISO(timestamp), 'do LLL yyyy')
   return (
     <div className={styles.container}>
@@ -41,16 +39,6 @@ const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProf
           </h2>
           <div className={styles.metadata}>
             {publicationDate} / <Link href={`/${type}`}><a className={styles.typeLink}>{type}</a></Link> / {getAuthorLink(authorName, authorProfile)}
-          </div>
-          {
-            body && (
-              <p className={styles.snippet}>{snippetFromText(body)}</p>
-            )
-          }
-          <div className={styles.linkContainer}>
-            <PageLink href={href}>
-              {linkText} <img className={styles.linkArrowIcon} src={rightArrowIcon} />
-            </PageLink>
           </div>
         </section>
       </div>
