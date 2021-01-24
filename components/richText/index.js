@@ -5,7 +5,7 @@ import styles from './richText.module.css'
 const RichText = ({ content }) => {
   return (
     <div
-      className={styles.content}
+      className={styles.container}
       dangerouslySetInnerHTML={{ __html: PrismicDOM.RichText.asHtml(content, null) }}
     />
   )
