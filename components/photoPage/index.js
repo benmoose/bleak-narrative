@@ -60,7 +60,7 @@ const PhotoPage = ({ document }) => {
             default:
               throw Error(`No component for photo-page body slice of type ${slice.slice_type}`)
           }
-        }).map(bodyC => <WithSpacing children={bodyC} />)
+        }).map((C, i) => <WithSpacing key={i}>{C}</WithSpacing>)
       }
     </>
   )

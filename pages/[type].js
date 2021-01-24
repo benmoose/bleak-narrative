@@ -35,8 +35,8 @@ export async function getStaticProps ({ params }) {
     Prismic.Predicates.at('document.type', params.type),
     { orderings: '[document.first_publication_date desc]', pageSize: 100 }
   ))
-  const { results, page, total_pages } = pagesForType
-  const props = { results, page, totalPages: total_pages }
+  const { results, page } = pagesForType
+  const props = { results, page, totalPages: pagesForType.total_pages }
   return { props }
 }
 

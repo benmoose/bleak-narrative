@@ -1,14 +1,14 @@
 import styles from './fullWidthImage.module.css'
 
 const FullWidthImage = ({ items, onClickHandler, urlToGalleryIndex }) => {
-  return items.map(item => {
+  return items.map((item, i) => {
     const Img = getImageComponent({
       className: 'image',
       imageURL: item.image.url,
       imageAlt: item.image.alt,
       onImageClick: () => onClickHandler(urlToGalleryIndex[item.image.url])
     })
-    return <Img />
+    return <Img key={`${i}-${item.image.url}`} />
   })
 }
 
