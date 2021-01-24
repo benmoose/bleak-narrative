@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next",
     "lint": "standard --fix",
+    "lint:check": "standard",
     "build": "next build",
     "export": "next export",
     "start": "next start",
