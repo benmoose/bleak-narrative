@@ -12,10 +12,12 @@ import SoundcloudLogo from '../../public/icons/musical-note.svg'
 
 const Nav = ({ pathname }) => {
   const [open, setOpen] = useState(false)
-  return [
-    <DesktopNav pathname={pathname} requestOpenMobileNav={() => setOpen(true)} />,
-    <MobileNav pathname={pathname} open={open} requestCloseMobileNav={() => setOpen(false)} />
-  ]
+  return (
+    <>
+      <DesktopNav pathname={pathname} requestOpenMobileNav={() => setOpen(true)} />
+      <MobileNav pathname={pathname} open={open} requestCloseMobileNav={() => setOpen(false)} />
+    </>
+  )
 }
 
 const DesktopNav = ({ pathname, requestOpenMobileNav }) => {
@@ -59,61 +61,63 @@ const DesktopNav = ({ pathname, requestOpenMobileNav }) => {
 }
 
 const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
-  return [
-    <div className={c(styles.mobileNavContainer, { [styles.mobileNavOpen]: open })}>
-      <div className={styles.mobileNavHead}>
-        <button className={c(styles.iconButton, styles.closeIconButton)} onClick={requestCloseMobileNav}>
-          <img className={styles.closeIcon} src={ArrowLeft} />
-        </button>
+  return (
+    <>
+      <div className={c(styles.mobileNavContainer, { [styles.mobileNavOpen]: open })}>
+        <div className={styles.mobileNavHead}>
+          <button className={c(styles.iconButton, styles.closeIconButton)} onClick={requestCloseMobileNav}>
+            <img className={styles.closeIcon} src={ArrowLeft} />
+          </button>
+        </div>
+
+        <ul className={styles.mobileNavLinkContainer}>
+          <li>
+            <StyledLink onClick={requestCloseMobileNav} href='/music' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}>Music</StyledLink>
+          </li>
+          <li>
+            <StyledLink onClick={requestCloseMobileNav} href='/art' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/art' })}>Art</StyledLink>
+          </li>
+          <li>
+            <StyledLink onClick={requestCloseMobileNav} href='/stories' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/stories' })}>Stories</StyledLink>
+          </li>
+          <li>
+            <StyledLink onClick={requestCloseMobileNav} href='/about' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/about' })}>About</StyledLink>
+          </li>
+          <li>
+            <StyledLink onClick={requestCloseMobileNav} href='/community' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</StyledLink>
+          </li>
+        </ul>
+
+        <hr className={styles.mobileNavDivider} />
+
+        <ul className={styles.mobileNavLinkContainer}>
+          <li>
+            <StyledLink
+              onClick={requestCloseMobileNav}
+              target='_blank'
+              rel='noreferrer'
+              href='https://instagram.com/bleaknarrative'
+              className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}
+            >
+              Soundcloud
+            </StyledLink>
+          </li>
+          <li>
+            <StyledLink
+              onClick={requestCloseMobileNav}
+              target='_blank'
+              rel='noreferrer'
+              href='https://instagram.com/bleaknarrative'
+              className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}
+            >
+              Instagram
+            </StyledLink>
+          </li>
+        </ul>
       </div>
-
-      <ul className={styles.mobileNavLinkContainer}>
-        <li>
-          <StyledLink onClick={requestCloseMobileNav} href='/music' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}>Music</StyledLink>
-        </li>
-        <li>
-          <StyledLink onClick={requestCloseMobileNav} href='/art' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/art' })}>Art</StyledLink>
-        </li>
-        <li>
-          <StyledLink onClick={requestCloseMobileNav} href='/stories' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/stories' })}>Stories</StyledLink>
-        </li>
-        <li>
-          <StyledLink onClick={requestCloseMobileNav} href='/about' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/about' })}>About</StyledLink>
-        </li>
-        <li>
-          <StyledLink onClick={requestCloseMobileNav} href='/community' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</StyledLink>
-        </li>
-      </ul>
-
-      <hr className={styles.mobileNavDivider} />
-
-      <ul className={styles.mobileNavLinkContainer}>
-        <li>
-          <StyledLink
-            onClick={requestCloseMobileNav}
-            target='_blank'
-            rel='noreferrer'
-            href='https://instagram.com/bleaknarrative'
-            className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}
-          >
-            Soundcloud
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink
-            onClick={requestCloseMobileNav}
-            target='_blank'
-            rel='noreferrer'
-            href='https://instagram.com/bleaknarrative'
-            className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}
-          >
-            Instagram
-          </StyledLink>
-        </li>
-      </ul>
-    </div>,
-    <div className={c(styles.mobileNavOverlay, { [styles.mobileNavOverlayOff]: !open })} onClick={requestCloseMobileNav} />
-  ]
+      <div className={c(styles.mobileNavOverlay, { [styles.mobileNavOverlayOff]: !open })} onClick={requestCloseMobileNav} />
+    </>
+  )
 }
 
 export default Nav

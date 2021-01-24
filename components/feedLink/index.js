@@ -2,9 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
 
-import PageLink from '../link'
 import styles from './feedLink.module.css'
-import rightArrowIcon from '../../public/icons/right-arrow.svg'
 
 const FeedLink = ({ type, document }) => {
   const href = `/${type}/${document.uid}`
@@ -61,24 +59,6 @@ function getTitle (type, document) {
   throw Error(`Cannot get feed-link title for ${type} type`)
 }
 
-function getBody (type, document) {
-  switch (type) {
-    case 'music':
-      return 'document.data.description[0].text'
-    case 'art':
-      return ''
-    case 'stories':
-      return document.data.body.map(s => (
-        s.items.map(item => {
-          return item.text
-            ? item.text.map(t => t.text).filter(x => !!x)
-            : ''
-        })
-      )).join(' ')
-  }
-  throw Error(`Cannot get feed-link body for ${type} type`)
-}
-
 function getThumbnail (type, document) {
   switch (type) {
     case 'music':
@@ -91,33 +71,11 @@ function getThumbnail (type, document) {
   throw Error(`Cannot get feed-link thumbnail for ${type} type`)
 }
 
-function getLinkText (type) {
-  switch (type) {
-    case 'music':
-      return 'Listen to the mix'
-    case 'art':
-      return 'Visit the gallery'
-    default:
-      return 'Read more'
-  }
-}
-
 function getAuthorLink (authorName, authorProfile) {
   if (authorProfile && authorProfile.embed_url) {
     return <Link href={authorProfile.embed_url}><a target='_blank'>{authorName}</a></Link>
   }
   return authorName
-}
-
-function snippetFromText (text) {
-  if (!text) {
-    return ''
-  }
-  const words = text.split(' ')
-  if (words.length <= 32) {
-    return text
-  }
-  return words.slice(0, 32).join(' ') + '...'
 }
 
 function getMusicThumbnail (document) {

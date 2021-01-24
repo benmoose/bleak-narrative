@@ -6,10 +6,8 @@ import PageHeader from '../pageHeader'
 
 const MusicPage = ({ document }) => {
   const title = document.data.title[0].text
-  const artistImage = document.data.artist_image
   const body = document.data.body
 
-  const hasArtistImage = artistImage && artistImage.url
   return (
     <>
       <PageHeader
