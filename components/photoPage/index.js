@@ -7,6 +7,7 @@ import OnePhoto from './onePhoto'
 import TwoPhotos from './twoPhotos'
 import ThreePhotos from './threePhotos'
 import PhotoAndText from './photoAndText'
+import FullWidthImage from './fullWidthImage'
 
 const SLICE_TYPES = ['one_photo', 'two_photos', 'three_photos', 'photo___text', 'full_width_image']
 
@@ -55,17 +56,17 @@ const PhotoPage = ({ document }) => {
             case 'photo___text':
               return <PhotoAndText key={i} items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
             case 'full_width_image':
-              return slice.items.map((item, i) => <FullWidthImageItem key={i} item={item} />)
+              return <FullWidthImage items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
             default:
               throw Error(`No component for photo-page body slice of type ${slice.slice_type}`)
           }
-        })
+        }).map(bodyC => <WithSpacing children={bodyC} />)
       }
     </>
   )
 }
 
-const FullWidthImageItem = ({ item }) => <img className='image' src={item.image.url} />
+const WithSpacing = props => <div style={{ marginBottom: '50px' }} {...props} />
 
 function getPhotosDataForGallery (body) {
   const photox = []

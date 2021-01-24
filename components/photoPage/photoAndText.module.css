@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  margin-bottom: 40px;
 }
 
 .container:nth-child(odd) {
