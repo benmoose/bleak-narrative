@@ -7,7 +7,7 @@ import Elk from '../public/img/elk-bleak.jpg'
 const CommunityPage = () => {
   return (
     <>
-      <h1>Community</h1>
+      <h2>Bleak's Residents</h2>
       <p style={{ margin: '0' }}>We thrive on connections, relationships, and shared experiences. Without a sense of community, especially during these difficult times, it's hard to keep our mental health in check. We need one another to create and explore different kinds of boundaries when social distancing doesn't allow closeness in the conventional sense. This space is for you to get to know something more about the people behind Bleak Narrative, as well as our partners and collaborators. We're always open to bringing more people to join us because the more, the merrier, right?</p>
       <img src={BleakStrip} style={{ margin: '25px 0', width: '100%' }} />
       <Bio
@@ -20,7 +20,7 @@ const CommunityPage = () => {
         img={Whattis}
         title='Whattis (Germany)'
       >
-        <p>A Swedish goddess put on earth to ensure that people get what they want - hard techno and objective truths (the latter being a lie). I've spent most of my nightlife in Berlin's hedonism, which has genuinely refined my ability to detect good speed from shitty speed. All "jokes" aside, I'm a DJ, a raver, a lover, and a friend who knows a good project when I see one. That's why I joined Bleak! I'm here to maintain the flow of solidarity, convey a sense of anti-establishment, and help grow the community. But I'm mostly here to have fun, of course, and make you want to have fun as well! FUN FUN. Anyway, I'm an incredible cook. So reach out if you want a taste!</p>
+        <p>A Swedish goddess put on earth to ensure that people get what they want - hard techno and objective truths (the latter being a lie). I've spent most of my nightlife exploring the debauchery of Berlin, which has genuinely refined my ability to differentiate good speed from shitty speed. All "jokes" aside, I'm an explosive rave DJ and an incredible cook. So reach out if you want a taste!</p>
       </Bio>
       <Bio
         img={Elk}

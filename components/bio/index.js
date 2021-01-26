@@ -7,7 +7,7 @@ const Bio = ({ img, children, title }) => {
         <img className={styles.img} src={img} />
       </div>
       <div className={styles.bioContent}>
-        <h2 className={styles.title}>{title}</h2>
+        <h3 className={styles.title}>{title}</h3>
         {children}
       </div>
     </section>
