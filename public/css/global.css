@@ -24,8 +24,11 @@ body {
   background: #fdfcff;
   font-family: 'BodyFont', sans-serif;
   letter-spacing: 0.03rem;
-  background-image: url('/img/background.png');
-  background-repeat: repeat;
+}
+
+::selection {
+  background: black;
+  color: white;
 }
 
 p {
@@ -37,7 +40,7 @@ small {
   font-size: 1em;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'HeadingFont', Arial, Helvetica, sans-serif;
   font-size: 2.1em;
   line-height: 1.3em;
@@ -47,6 +50,10 @@ h1, h2 {
 
 h2 {
   font-size: 2em;
+}
+
+h3 {
+  font-size: 1.4em;
 }
 
 .image {
@@ -67,4 +74,37 @@ h2 {
   h1 {
     font-size: 2.6em;
   }
+}
+
+/*
+ * SPECIAL RAINBOW TEXT
+ * https://fossheim.io/writing/posts/css-text-gradient/
+ */
+.rainbow-text {
+  display: inline-block !important;
+  /* Fallback: Set a background color. */
+  background-color: black;
+
+  /* Create the gradient. */
+   background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%,
+        #E16541 16.666%,
+        #E16541 33.333%,
+        #F18F43 33.333%,
+        #F18F43 50%,
+        #8B9862 50%,
+        #8B9862 66.666%,
+        #476098 66.666%,
+        #476098 83.333%,
+        #A7489B 83.333%);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -1,8 +1,8 @@
 const PrivacyPage = () => {
   return (
     <main>
-      <h1>Contact</h1>
-      <p>Best way to get in touch with us is to sliiiide into our DM on one of our socials.</p>
+      <h2>Contact</h2>
+      <p>Best way to get in touch with us is to sliiiide into our DMs.</p>
       <p style={{ fontSize: '75%', opacity: '60%' }}>I can tell this'll be the start of something beautiful already...</p>
       <ul>
         <li><a href='https://instagram.com/bleaknarrative'>Insta</a></li>
