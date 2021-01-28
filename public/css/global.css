@@ -26,6 +26,11 @@ body {
   letter-spacing: 0.03rem;
 }
 
+::selection {
+  background: black;
+  color: white;
+}
+
 p {
   line-height: 1.6em;
 }
