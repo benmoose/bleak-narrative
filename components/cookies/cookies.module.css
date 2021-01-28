@@ -1,0 +1,59 @@
+.container {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    padding: 25px;
+    max-width: 420px;
+    width: 75vw;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .16);
+    opacity: 1;
+    transition: opacity 400ms, bottom 400ms;
+}
+
+.container.hide {
+    opacity: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.buttonContainer {
+    display: flex;
+}
+
+.primary, .secondary {
+    cursor: pointer;
+    padding: 4px 18px;
+    border-radius: 3px;
+    border: 0;
+    outline: 0;
+}
+
+.primary,
+.primary:active {
+    color: white;
+    background: #007bff;
+    margin: 0 5px 0 0;
+}
+
+.primary:hover,
+.primary:focus {
+    text-decoration: none;
+    color: white;
+    background: #0056b3;
+}
+
+.secondary,
+.secondary:active {
+    background: none;
+    color: #474445;
+}
+
+.secondary:hover,
+.secondary:focus {
+    background: #eee;
+    text-decoration: none;
+    color: black;
+}

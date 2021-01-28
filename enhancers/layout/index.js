@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 
 import Nav from '../../components/nav'
 import PageFooter from '../../components/pageFooter'
+import CookieConsent from '../../components/cookies'
+import { hasCookieConsent } from '../../utils/cookies'
 import styles from './layout.module.css'
 
 /**
@@ -11,6 +13,8 @@ import styles from './layout.module.css'
  */
 const WithLayout = Page => props => {
   const router = useRouter()
+  const onBrowser = typeof window !== 'undefined'
+
   return (
     <>
       <div className={styles.navContainer}>
@@ -26,6 +30,9 @@ const WithLayout = Page => props => {
           <PageFooter />
         </div>
       </div>
+      {
+        onBrowser && !hasCookieConsent() && <CookieConsent />
+      }
     </>
   )
 }
