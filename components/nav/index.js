@@ -96,7 +96,7 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
               onClick={requestCloseMobileNav}
               target='_blank'
               rel='noreferrer'
-              href='https://instagram.com/bleaknarrative'
+              href='https://soundcloud.com/bleaknarrative'
               className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}
             >
               Soundcloud
