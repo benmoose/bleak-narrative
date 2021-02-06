@@ -37,7 +37,7 @@ const Home = ({ recentDocuments, latestMusicDocument }) => {
         <HrTitle>Latest DJ mix</HrTitle>
         <h3 style={{ margin: 0 }}>
           <Link href={`/music/${latestMusicDocument.uid}`}>
-            <a style={{color: 'black', textDecoration: 'none'}}>{musicData.title[0].text}</a>
+            <a style={{ color: 'black', textDecoration: 'none' }}>{musicData.title[0].text}</a>
           </Link>
         </h3>
         <p>by {AuthorLink}</p>

@@ -11,13 +11,10 @@
 .containerA:hover,
 .containerA:active {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   width: 100%;
   margin: 0 auto;
-}
-
-.container .containerA {
-  flex-direction: column;
 }
 
 .containerMinimal .containerA {
