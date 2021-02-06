@@ -1,8 +1,10 @@
 import React from 'react'
+import Link from 'next/link'
 import Prismic from 'prismic-javascript'
 import Grid from '@material-ui/core/Grid'
 
 import FeedList from '../components/feedList'
+import PageLink from '../components/link'
 import SoundcloudPlayer from '../components/soundcloudPlayer'
 import { HomePageJumbotron, HrTitle } from '../components/homePage'
 import { prismicAPI } from '../utils/prismic'
@@ -22,6 +24,10 @@ const Home = ({ recentDocuments, latestMusicDocument }) => {
     </React.Fragment>
   )))[0]
 
+  const AuthorLink = musicData.author_profile && musicData.author_profile.embed_url
+    ? <PageLink target='_blank' href={musicData.author_profile.embed_url}>{musicData.author_name}</PageLink>
+    : <strong>{musicData.author_name}</strong>
+
   return (
     <Grid container spacing={4}>
       <Grid item xs={12}>
@@ -29,14 +35,23 @@ const Home = ({ recentDocuments, latestMusicDocument }) => {
       </Grid>
       <Grid item xs={12}>
         <HrTitle>Latest DJ mix</HrTitle>
-        <p><h3 style={{ margin: 0 }}>{musicData.title[0].text}</h3> by <strong>{musicData.author_name}</strong></p>
+        <h3 style={{ margin: 0 }}>
+          <Link href={`/music/${latestMusicDocument.uid}`}>
+            <a style={{color: 'black', textDecoration: 'none'}}>{musicData.title[0].text}</a>
+          </Link>
+        </h3>
+        <p>by {AuthorLink}</p>
         {SCPlayer}
       </Grid>
       <Grid item xs={12} sm={8}>
         {MusicContent}
       </Grid>
       <Grid item xs={12} sm={4}>
-        <FeedList minimal documents={recentDocuments.map(item => item.document)} title={<HrTitle>Recent stories</HrTitle>} />
+        <FeedList
+          minimal
+          documents={recentDocuments.map(item => item.document)}
+          title={<HrTitle>Recent stories</HrTitle>}
+        />
       </Grid>
     </Grid>
   )
@@ -58,6 +73,7 @@ export async function getStaticProps () {
   })
 
   const latestMusicDocument = musicDocuments.results.map(preparePrismicResponse)[0]
+  // filter out the featured music document so we don't repeat
   const recentDocuments = allDocuments.results.map(preparePrismicResponse).filter(el => el.uid !== latestMusicDocument.uid)
   return { props: { recentDocuments, latestMusicDocument } }
 }
