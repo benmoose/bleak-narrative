@@ -1,22 +1,11 @@
 import React from 'react'
 import Prismic from 'prismic-javascript'
 
+import FeedList from '../components/feedList'
 import { prismicAPI } from '../utils/prismic'
-import FeedLink from '../components/feedLink'
 
 const Home = props => {
-  return (
-    props.feedLinks.map(doc => {
-      return (
-        <FeedLink
-          key={doc.uid}
-          id={doc.uid}
-          type={doc.type}
-          document={doc.document}
-        />
-      )
-    })
-  )
+  return <FeedList items={props.items.map(item => item.document)} />
 }
 
 export async function getStaticProps () {
@@ -27,11 +16,11 @@ export async function getStaticProps () {
     )
   })
 
-  const feedLinks = prismicResponse.results.map(document => {
+  const items = prismicResponse.results.map(document => {
     const { uid, type } = document
     return { uid, type, document }
   }).filter(el => !!el)
-  return { props: { feedLinks } }
+  return { props: { items } }
 }
 
 export default Home

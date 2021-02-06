@@ -2,9 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
 
-import styles from './feedLink.module.css'
+import styles from './feedItem.module.css'
 
-const FeedLink = ({ type, document }) => {
+const FeedItem = ({ type, document }) => {
   const href = `/${type}/${document.uid}`
   return (
     <FeedLinkContent
@@ -92,4 +92,4 @@ function getMusicThumbnail (document) {
   throw Error(`No thumbnail found for music feed item ${document.uid}.`)
 }
 
-export default FeedLink
+export default FeedItem

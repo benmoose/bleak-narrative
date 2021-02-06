@@ -1,15 +1,15 @@
+import React from 'react'
 import Prismic from 'prismic-javascript'
 import DefaultErrorPage from 'next/error'
 import { useRouter } from 'next/router'
 
-import FeedDescription from '../components/feedDescription'
-import FeedLink from '../components/feedLink'
+import FeedList from '../components/feedList'
 import { prismicAPI } from '../utils/prismic'
 
 const typeDescription = {
-  music: <p>We're all here for the music, right? We publish original mixes from DJs and artists coming from all corners of the world, representing all electronic music styles, every Monday at 6pm CET.</p>,
-  stories: <p>Friendships forming on the dance floor, surreal conversations with strangers in the chill area, or even not-so-happy cautionary club tales involving illicit substances. No matter if you’re the superstar DJ or the light-bulb-changer at the local bar - this space is open for all narratives to be told.</p>,
-  art: <p>Photographs, illustrations, sketches, videos, old party flyers, our in-house comics section, and more. You don’t need to be a magnificent artist to be featured here (have you seen our drawings?), but your pieces need to be related to club culture, and they need to tell a damn good story.</p>
+  music: "We're all here for the music, right? We publish original mixes from DJs and artists coming from all corners of the world, representing all electronic music styles, every Monday at 6pm CET.",
+  stories: 'Friendships forming on the dance floor, surreal conversations with strangers in the chill area, or even not-so-happy cautionary club tales involving illicit substances. No matter if you’re the superstar DJ or the light-bulb-changer at the local bar - this space is open for all narratives to be told.',
+  art: 'Photographs, illustrations, sketches, videos, old party flyers, our in-house comics section, and more. You don’t need to be a magnificent artist to be featured here (have you seen our drawings?), but your pieces need to be related to club culture, and they need to tell a damn good story.'
 }
 
 const BleakPageByType = ({ results, page, totalPages }) => {
@@ -18,21 +18,13 @@ const BleakPageByType = ({ results, page, totalPages }) => {
   }
 
   const router = useRouter()
-  const TypeDesc = (
-    <>
-      <h2>{sentenceCase(router.query.type)}</h2>
-      <FeedDescription content={typeDescription[router.query.type]} />
-    </>
-  )
-  const Feed = results.map(doc => (
-    <FeedLink
-      key={doc.uid}
-      id={doc.uid}
-      type={doc.type}
-      document={doc}
+  return (
+    <FeedList
+      items={results}
+      title={sentenceCase(router.query.type)}
+      desc={typeDescription[router.query.type]}
     />
-  ))
-  return [TypeDesc, Feed]
+  )
 }
 
 export async function getStaticProps ({ params }) {
