@@ -15,6 +15,7 @@ const MusicPage = ({ document }) => {
         timestamp={document.data.publication_date_override || document.first_publication_date}
         authorName={document.data.author_name}
         authorLink={document.data.author_profile && document.data.author_profile.embed_url}
+        authorImage={document.data.artist_image.url}
       />
 
       {
