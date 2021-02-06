@@ -3,14 +3,25 @@
   margin-bottom: 80px;
 }
 
+.containerMinimal {
+  margin-bottom: 30px;
+}
+
 .containerA,
 .containerA:hover,
 .containerA:active {
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
   width: 100%;
   margin: 0 auto;
+}
+
+.container .containerA {
+  flex-direction: column;
+}
+
+.containerMinimal .containerA {
+  flex-direction: row;
 }
 
 .textContainer {
@@ -18,9 +29,12 @@
   margin-left: 0;
 }
 
+.containerMinimal .textContainer {
+  margin-left: 15px;
+}
+
 .title {
-  margin: 0;
-  font-size: 1.4em;
+  margin: 0 0 6px;
 }
 
 .titleLink,
@@ -31,9 +45,18 @@
   text-decoration: none;
 }
 
+.author,
+.metadata {
+  color: #434343;
+}
+
 .author {
   display: block;
   font-family: HeadingFont;
+}
+
+.authorSmallText {
+  font-size: .8em;
 }
 
 .authorName {
@@ -44,6 +67,10 @@
 
 .metadata {
   text-align: right;
+}
+
+.containerMinimal .metadata {
+  font-size: .85em;
 }
 
 .imgContainer,
@@ -58,20 +85,13 @@
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
   object-fit: cover;
 }
+.containerMinimal .img {
+  width: 64px;
+  height: 64px;
+}
 
 .linkContainer {
   text-align: right;
-}
-
-.typeLink,
-.typeLink:hover {
-  color: inherit;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.linkArrowIcon {
-  width: 20px;
 }
 
 @media only screen and (min-width: 500px) {
@@ -79,7 +99,6 @@
   .containerA:hover,
   .containerA:active {
     flex-direction: row;
-    margin-bottom: 80px;
   }
 
   .imgContainer {
@@ -92,7 +111,11 @@
     height: 110px;
   }
 
-  .textContainer {
+  .container .paddingLeft {
     margin-left: 30px;
+  }
+
+  .containerMinimal .paddingLeft {
+    margin-left: 15px;
   }
 }

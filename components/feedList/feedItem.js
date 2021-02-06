@@ -1,10 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
+import c from 'classnames'
 
+import PageLink from '../link'
 import styles from './feedItem.module.css'
 
-const FeedItem = ({ type, document }) => {
+const FeedItem = ({ type, document, minimal }) => {
   const href = `/${type}/${document.uid}`
   return (
     <FeedLinkContent
@@ -13,33 +15,40 @@ const FeedItem = ({ type, document }) => {
       timestamp={document.data.publication_date_override || document.first_publication_date}
       authorName={document.data.author_name}
       authorProfile={document.data.author_profile}
-      image={getThumbnail(type, document)}
       title={getTitle(type, document)}
+      image={getThumbnail(type, document)}
+      smallText={minimal}
+      minimal={minimal}
     />
   )
 }
 
-const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProfile, type }) => {
+const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProfile, type, minimal }) => {
   const publicationDate = format(parseISO(timestamp), 'do LLL yyyy')
+  const H = minimal ? props => <h4 {...props} /> : props => <h3 {...props} />
   return (
-    <div className={styles.container}>
+    <div className={c(styles.container, { [styles.containerMinimal]: !!minimal })}>
       <div className={styles.containerA}>
-        <Link href={href}>
-          <a className={styles.imgContainer}><img className={styles.img} src={image} /></a>
-        </Link>
-        <section className={styles.textContainer}>
-          <h2 className={styles.title}>
+        {
+          image && (
+            <Link href={href}>
+              <a className={styles.imgContainer}><img className={styles.img} src={image} /></a>
+            </Link>
+          )
+        }
+        <section className={c(styles.textContainer, { [styles.paddingLeft]: !!image })}>
+          <H className={styles.title}>
             <Link href={href}>
               <a className={styles.titleLink}>
                 {title}
               </a>
             </Link>
-          </h2>
-          <div className={styles.author}>
+          </H>
+          <div className={c(styles.author, { [styles.authorSmallText]: minimal })}>
             by {getAuthorLink(authorName, authorProfile)}
           </div>
           <div className={styles.metadata}>
-            {publicationDate} / <Link href={`/${type}`}><a className={styles.typeLink}>{type}</a></Link>
+            {publicationDate} / <PageLink href={`/${type}`}>{type}</PageLink>
           </div>
         </section>
       </div>
@@ -73,7 +82,7 @@ function getThumbnail (type, document) {
 
 function getAuthorLink (authorName, authorProfile) {
   if (authorProfile && authorProfile.embed_url) {
-    return <Link href={authorProfile.embed_url}><a target='_blank'>{authorName}</a></Link>
+    return <PageLink href={authorProfile.embed_url} target='_blank'>{authorName}</PageLink>
   }
   return authorName
 }
