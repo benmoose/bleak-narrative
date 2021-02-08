@@ -1,2 +1,12 @@
-const withImages = require('next-images')
-module.exports = withImages()
+module.exports = {
+  ...require('next-images')(),
+  async redirects () {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: false
+      }
+    ]
+  }
+}
