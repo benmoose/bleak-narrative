@@ -1,12 +1,10 @@
 import React from 'react'
-import Link from 'next/link'
 import Prismic from 'prismic-javascript'
 import Grid from '@material-ui/core/Grid'
 
-import FeedList from '../components/feedList'
 import PageLink from '../components/link'
 import SoundcloudPlayer from '../components/soundcloudPlayer'
-import { HomePageJumbotron, HrTitle } from '../components/homePage'
+import { HomePageJumbotron } from '../components/homePage'
 import { prismicAPI } from '../utils/prismic'
 import RichText from '../components/richText'
 
@@ -32,26 +30,6 @@ const Home = ({ recentDocuments, latestMusicDocument }) => {
     <Grid container spacing={4}>
       <Grid item xs={12}>
         <HomePageJumbotron />
-      </Grid>
-      <Grid item xs={12}>
-        <HrTitle>Latest DJ mix</HrTitle>
-        <h3 style={{ margin: 0 }}>
-          <Link href={`/music/${latestMusicDocument.uid}`}>
-            <a style={{ color: 'black', textDecoration: 'none' }}>{musicData.title[0].text}</a>
-          </Link>
-        </h3>
-        <p>by {AuthorLink}</p>
-        {SCPlayer}
-      </Grid>
-      <Grid item xs={12} sm={8}>
-        {MusicContent}
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <FeedList
-          minimal
-          documents={recentDocuments.map(item => item.document)}
-          title={<HrTitle>Recent stories</HrTitle>}
-        />
       </Grid>
     </Grid>
   )

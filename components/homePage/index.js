@@ -10,7 +10,7 @@ export const HomePageJumbotron = () => {
       <img src={BannerSlim} className={styles.img} alt='Club culture banner' />
       <div className={styles.jumbotronTextContainer}>
         <h2 className={styles.jumbotronTextSm}>Bleeps & Bloops &middot; Sounds & Stories</h2>
-        <h1 className={styles.jumbotronTextLg}>A Home for Underground Club Culture</h1>
+        <h1 className={styles.jumbotronTextLg}>Our new website is landing soon!</h1>
       </div>
       <img src={Banner} className={styles.img} alt='Club culture banner' />
     </div>

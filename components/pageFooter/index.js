@@ -13,12 +13,6 @@ const PageFooter = () => {
         <ul className={styles.footerLinks}>
           <li className={styles.copyright}><strong>Copyright © {copyrightYear} Bleak Narrative</strong></li>
           <li>
-            <Link href='/community'><a>Community</a></Link>
-          </li>
-          <li>
-            <Link href='/contact'><a>Contact</a></Link>
-          </li>
-          <li>
             <Link href='https://soundcloud.com/bleaknarrative'><a target='_blank'>SoundCloud</a></Link>
           </li>
           <li>

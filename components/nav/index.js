@@ -6,7 +6,6 @@ import styles from './nav.module.css'
 import NavLink from './navLink'
 import bleakLogo from '../../public/img/bleak-icon.png'
 import ArrowLeft from '../../public/icons/arrow-left.svg'
-import BurgerMenu from '../../public/icons/burger-menu.svg'
 import InstagramLogo from '../../public/icons/instagram.svg'
 import SoundcloudLogo from '../../public/icons/musical-note.svg'
 
@@ -25,14 +24,7 @@ const DesktopNav = ({ pathname, requestOpenMobileNav }) => {
     <nav className={styles.background}>
       <div className={styles.navContainer}>
         <div className={c(styles.navSection)}>
-          <div className={styles.desktopOnly}>
-            <NavLink href='/music' className={c(styles.pageLink, { [styles.active]: pathname === '/music' })}>Music</NavLink>
-            <NavLink href='/art' className={c(styles.pageLink, { [styles.active]: pathname === '/art' })}>Art</NavLink>
-            <NavLink href='/stories' className={c(styles.pageLink, { [styles.active]: pathname === '/stories' })}>Stories</NavLink>
-          </div>
-          <button className={c(styles.mobileOnly, styles.iconButton)} onClick={requestOpenMobileNav}>
-            <img src={BurgerMenu} className={styles.burgerMenuIcon} />
-          </button>
+          <div className={styles.desktopOnly} />
         </div>
 
         <div className={c(styles.navSection, styles.textCentre, styles.navSectionCentre)}>
@@ -45,8 +37,6 @@ const DesktopNav = ({ pathname, requestOpenMobileNav }) => {
 
         <div className={c(styles.navSection, styles.textRight)}>
           <div className={styles.desktopOnly}>
-            <NavLink href='/about' className={c(styles.pageLink, { [styles.active]: pathname === '/about' })}>About</NavLink>
-            <NavLink href='/community' className={c(styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</NavLink>
             <a target='_blank' rel='noreferrer' href='https://soundcloud.com/bleaknarrative'>
               <img className={c(styles.iconLink, styles.soundcloud)} src={SoundcloudLogo} />
             </a>
