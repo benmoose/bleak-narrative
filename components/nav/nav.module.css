@@ -172,6 +172,30 @@
   pointer-events: none;
 }
 
+.navTadContainer {
+  position: absolute;
+  left: -140px;
+  bottom: 69px;
+  width: 120px;
+  transition: left 300ms ease-in-out;
+  transition-delay: 440ms;
+}
+
+.navTad {
+  width: 100%;
+  transform: rotate(-50deg);
+  transition: transform 300ms ease-in-out;
+  transition-delay: 440ms;
+}
+
+.navTadOpen.navTadContainer {
+  left: -50px;
+}
+
+.navTadOpen .navTad {
+  transform: rotate(-40deg);
+}
+
 @media only screen and (min-width: 778px) {
   .desktopOnly {
     display: inline-block;
