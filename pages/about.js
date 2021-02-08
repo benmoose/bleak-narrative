@@ -3,7 +3,7 @@ import Banner from '../public/img/toilet-doodle.png'
 const AboutPage = () => {
   return (
     <main>
-      <div styles={{ height: '260px', marginBottom: '30px' }}>
+      <div style={{ height: '260px', marginBottom: '30px' }}>
         <img src={Banner} style={{ width: '100%', height: '260px', objectFit: 'contain', margin: '0', display: 'block' }} />
       </div>
       <h2>HELLO!</h2>
