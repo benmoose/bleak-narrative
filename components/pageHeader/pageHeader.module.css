@@ -1,5 +1,18 @@
 .container {
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.authorImage {
+  width: 92px;
+  height: 92px;
+  margin-right: 30px;
+  object-fit: cover;
+}
+
+.titleContainer {
+  flex: 1;
 }
 
 .title {

@@ -1,13 +1,15 @@
 .link {
   display: inline-block;
   position: relative;
-  color: black;
-  text-decoration: none;
-  transition: opacity, background-color 80ms;
+  padding: 0 3px;
+  color: #272727;
+  font-weight: bold;
+  background: rgba(0, 0, 0, .06);
+  border-radius: 1px;
 }
 
 .link:hover {
   color: black;
+  background: rgba(0, 0, 0, .09);
   text-decoration: none;
-  opacity: .7;
 }

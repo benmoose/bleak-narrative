@@ -3,7 +3,7 @@ import Link from 'next/link'
 import c from 'classnames'
 
 import styles from './nav.module.css'
-import StyledLink from '../link'
+import NavLink from './navLink'
 import bleakLogo from '../../public/img/bleak-icon.png'
 import ArrowLeft from '../../public/icons/arrow-left.svg'
 import BurgerMenu from '../../public/icons/burger-menu.svg'
@@ -26,9 +26,9 @@ const DesktopNav = ({ pathname, requestOpenMobileNav }) => {
       <div className={styles.navContainer}>
         <div className={c(styles.navSection)}>
           <div className={styles.desktopOnly}>
-            <StyledLink href='/music' className={c(styles.pageLink, { [styles.active]: pathname === '/music' })}>Music</StyledLink>
-            <StyledLink href='/art' className={c(styles.pageLink, { [styles.active]: pathname === '/art' })}>Art</StyledLink>
-            <StyledLink href='/stories' className={c(styles.pageLink, { [styles.active]: pathname === '/stories' })}>Stories</StyledLink>
+            <NavLink href='/music' className={c(styles.pageLink, { [styles.active]: pathname === '/music' })}>Music</NavLink>
+            <NavLink href='/art' className={c(styles.pageLink, { [styles.active]: pathname === '/art' })}>Art</NavLink>
+            <NavLink href='/stories' className={c(styles.pageLink, { [styles.active]: pathname === '/stories' })}>Stories</NavLink>
           </div>
           <button className={c(styles.mobileOnly, styles.iconButton)} onClick={requestOpenMobileNav}>
             <img src={BurgerMenu} className={styles.burgerMenuIcon} />
@@ -45,8 +45,8 @@ const DesktopNav = ({ pathname, requestOpenMobileNav }) => {
 
         <div className={c(styles.navSection, styles.textRight)}>
           <div className={styles.desktopOnly}>
-            <StyledLink href='/about' className={c(styles.pageLink, { [styles.active]: pathname === '/about' })}>About</StyledLink>
-            <StyledLink href='/community' className={c(styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</StyledLink>
+            <NavLink href='/about' className={c(styles.pageLink, { [styles.active]: pathname === '/about' })}>About</NavLink>
+            <NavLink href='/community' className={c(styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</NavLink>
             <a target='_blank' rel='noreferrer' href='https://soundcloud.com/bleaknarrative'>
               <img className={c(styles.iconLink, styles.soundcloud)} src={SoundcloudLogo} />
             </a>
@@ -72,19 +72,19 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
 
         <ul className={styles.mobileNavLinkContainer}>
           <li>
-            <StyledLink onClick={requestCloseMobileNav} href='/music' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}>Music</StyledLink>
+            <NavLink onClick={requestCloseMobileNav} href='/music' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}>Music</NavLink>
           </li>
           <li>
-            <StyledLink onClick={requestCloseMobileNav} href='/art' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/art' })}>Art</StyledLink>
+            <NavLink onClick={requestCloseMobileNav} href='/art' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/art' })}>Art</NavLink>
           </li>
           <li>
-            <StyledLink onClick={requestCloseMobileNav} href='/stories' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/stories' })}>Stories</StyledLink>
+            <NavLink onClick={requestCloseMobileNav} href='/stories' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/stories' })}>Stories</NavLink>
           </li>
           <li>
-            <StyledLink onClick={requestCloseMobileNav} href='/about' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/about' })}>About</StyledLink>
+            <NavLink onClick={requestCloseMobileNav} href='/about' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/about' })}>About</NavLink>
           </li>
           <li>
-            <StyledLink onClick={requestCloseMobileNav} href='/community' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</StyledLink>
+            <NavLink onClick={requestCloseMobileNav} href='/community' className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/community' })}>Community</NavLink>
           </li>
         </ul>
 
@@ -92,7 +92,7 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
 
         <ul className={styles.mobileNavLinkContainer}>
           <li>
-            <StyledLink
+            <NavLink
               onClick={requestCloseMobileNav}
               target='_blank'
               rel='noreferrer'
@@ -100,10 +100,10 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
               className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}
             >
               Soundcloud
-            </StyledLink>
+            </NavLink>
           </li>
           <li>
-            <StyledLink
+            <NavLink
               onClick={requestCloseMobileNav}
               target='_blank'
               rel='noreferrer'
@@ -111,7 +111,7 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
               className={c(styles.mobileNavLink, styles.pageLink, { [styles.active]: pathname === '/music' })}
             >
               Instagram
-            </StyledLink>
+            </NavLink>
           </li>
         </ul>
       </div>

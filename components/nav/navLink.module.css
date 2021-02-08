@@ -1,0 +1,12 @@
+.link {
+    display: inline-block;
+    position: relative;
+    color: black;
+    transition: opacity, background-color 80ms;
+}
+
+.link:hover {
+    color: black;
+    text-decoration: none;
+    opacity: .7;
+}
