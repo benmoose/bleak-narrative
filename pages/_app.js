@@ -11,6 +11,8 @@ export default Layout(({ Component, pageProps }) => {
       <Helmet>
         <title>Bleak Narrative</title>
         <link rel='icon' type='image/png' href='/img/bleak-fav.png' />
+        <meta name='description' content="Artsy-fartsy, bleepy-bloopy music platform for underground schmucks. Don't take yourself too seriously and we'll get along just fine." />
+        <meta name='robots' content='index, follow' />
       </Helmet>
       <Component {...pageProps} />
     </>
