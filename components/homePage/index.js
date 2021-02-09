@@ -1,27 +1,20 @@
 import React from 'react'
 import styles from './homePage.module.css'
+import Grid from '@material-ui/core/Grid'
 
-import Banner from '../../public/img/homepagebanner.png'
-import BannerSlim from '../../public/img/homepagebanner-slim.png'
+import DevTad from '../../public/img/websiteannouncementdoodle.png'
 
 export const HomePageJumbotron = () => {
   return (
-    <div className={styles.container}>
-      <img src={BannerSlim} className={styles.img} alt='Club culture banner' />
-      <div className={styles.jumbotronTextContainer}>
-        <h2 className={styles.jumbotronTextSm}>Bleeps & Bloops &middot; Sounds & Stories</h2>
-        <h1 className={styles.jumbotronTextLg}>Our new website is landing soon!</h1>
-      </div>
-      <img src={Banner} className={styles.img} alt='Club culture banner' />
-    </div>
-  )
-}
-
-export const HrTitle = ({ children }) => {
-  return (
-    <div className={styles.hrContainer}>
-      <p className={styles.hrTitle}>{children}</p>
-      <hr className={styles.hr} />
-    </div>
+    <Grid container spacing={4} alignItems='center'>
+      <Grid item xs={12} sm={6}>
+        <img src={DevTad} className={styles.img} alt='Club culture banner' />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <p className={styles.subtitle}>Bleep Bloop</p>
+        <h1 className={styles.title}>Our new website is nearly ready!</h1>
+        <p>Follow us on <a className={styles.link} rel='nofollow' href='https://instagram.com/bleaknarrative'>Instagram</a> to get notified!</p>
+      </Grid>
+    </Grid>
   )
 }

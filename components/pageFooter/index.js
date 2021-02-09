@@ -16,6 +16,9 @@ const PageFooter = () => {
             <Link href='https://soundcloud.com/bleaknarrative'><a target='_blank'>SoundCloud</a></Link>
           </li>
           <li>
+            <Link href='https://instagram.com/bleaknarrative'><a target='_blank'>Instagram</a></Link>
+          </li>
+          <li>
             <Link href='/privacy'><a>Privacy</a></Link>
           </li>
         </ul>

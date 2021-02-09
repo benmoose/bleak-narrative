@@ -2,30 +2,10 @@ import React from 'react'
 import Prismic from 'prismic-javascript'
 import Grid from '@material-ui/core/Grid'
 
-import PageLink from '../components/link'
-import SoundcloudPlayer from '../components/soundcloudPlayer'
 import { HomePageJumbotron } from '../components/homePage'
 import { prismicAPI } from '../utils/prismic'
-import RichText from '../components/richText'
 
 const Home = ({ recentDocuments, latestMusicDocument }) => {
-  const musicData = latestMusicDocument.document.data
-  const SCPlayer = musicData.body.map(slice => slice.items.map((sliceItem, i) => (
-    <React.Fragment key={i}>
-      <SoundcloudPlayer src={sliceItem.track.embed_url} />
-    </React.Fragment>
-  )))[0]
-
-  const MusicContent = musicData.body.map(slice => slice.items.map((sliceItem, i) => (
-    <React.Fragment key={i}>
-      <RichText content={sliceItem.track_description} />
-    </React.Fragment>
-  )))[0]
-
-  const AuthorLink = musicData.author_profile && musicData.author_profile.embed_url
-    ? <PageLink target='_blank' href={musicData.author_profile.embed_url}>{musicData.author_name}</PageLink>
-    : <strong>{musicData.author_name}</strong>
-
   return (
     <Grid container spacing={4}>
       <Grid item xs={12}>
