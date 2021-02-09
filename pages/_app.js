@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet'
-import Layout from '../enhancers/layout'
-
 import 'react-bnb-gallery/dist/style.css'
+
+import Layout from '../enhancers/layout'
 import '../public/css/reboot.css'
 import '../public/css/global.css'
 

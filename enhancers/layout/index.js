@@ -2,6 +2,7 @@ import React from 'react'
 import c from 'classnames'
 import { useRouter } from 'next/router'
 
+import { isServer } from '../../utils/env'
 import Nav from '../../components/nav'
 import PageFooter from '../../components/pageFooter'
 import CookieConsent from '../../components/cookies'
@@ -13,7 +14,6 @@ import styles from './layout.module.css'
  */
 const WithLayout = Page => props => {
   const router = useRouter()
-  const onBrowser = typeof window !== 'undefined'
 
   return (
     <>
@@ -31,7 +31,7 @@ const WithLayout = Page => props => {
         </div>
       </div>
       {
-        onBrowser && !hasCookieConsent() && <CookieConsent />
+        !isServer() && !hasCookieConsent() && <CookieConsent />
       }
     </>
   )
