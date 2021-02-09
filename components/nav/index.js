@@ -4,7 +4,8 @@ import c from 'classnames'
 
 import styles from './nav.module.css'
 import NavLink from './navLink'
-import bleakLogo from '../../public/img/bleak-icon.png'
+import BleakLogo from '../../public/img/bleak-icon.png'
+import NavTad from '../../public/img/nav-tad.png'
 import ArrowLeft from '../../public/icons/arrow-left.svg'
 import InstagramLogo from '../../public/icons/instagram.svg'
 import SoundcloudLogo from '../../public/icons/musical-note.svg'
@@ -30,7 +31,7 @@ const DesktopNav = ({ pathname, requestOpenMobileNav }) => {
         <div className={c(styles.navSection, styles.textCentre, styles.navSectionCentre)}>
           <Link href='/'>
             <a className={styles.brandLink}>
-              <img src={bleakLogo} style={{ width: '62px' }} alt='Bleak Narrative' />
+              <img src={BleakLogo} style={{ width: '62px' }} alt='Bleak Narrative' />
             </a>
           </Link>
         </div>
@@ -104,10 +105,22 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
             </NavLink>
           </li>
         </ul>
+
+        <div className={c(styles.navTadContainer, { [styles.navTadOpen]: open && showNavTad() })}>
+          <img className={styles.navTad} src={NavTad} />
+        </div>
+
       </div>
       <div className={c(styles.mobileNavOverlay, { [styles.mobileNavOverlayOff]: !open })} onClick={requestCloseMobileNav} />
     </>
   )
+}
+
+function showNavTad () {
+  if (typeof window === 'undefined') {
+    return false
+  }
+  return Math.random() > 0.8
 }
 
 export default Nav
