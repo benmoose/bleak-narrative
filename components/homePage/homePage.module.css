@@ -1,34 +1,37 @@
-.container {
-    position: relative;
+/* Jumbotron */
+.title {
+    font-size: 1.7em;
     margin: 0 0 30px;
 }
 
-.jumbotronTextContainer {
-    text-align: center;
-    flex: 1;
-}
-
-.jumbotronTextSm {
+.subtitle {
     display: inline-block;
-    border-radius: 5px;
+    font-weight: bold;
     margin: 0 0 10px;
-    font-size: .8em;
-    opacity: .87;
-}
-
-.jumbotronTextLg {
-    margin: 0 0 20px;
-    font-size: 1.4em;
+    font-size: .88em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .img {
     display: block;
-    margin: 0 auto 20px;
-    max-width: 500px;
+    max-width: 380px;
     width: 100%;
     object-fit: contain;
 }
 
+.link {
+    color: #212529;
+    font-weight: bold;
+}
+
+.link:hover,
+.link:active,
+.link:focus {
+    color: black;
+}
+
+/* HRTitle */
 .hrContainer {
     position: relative;
     margin-bottom: 50px;
@@ -50,11 +53,11 @@
 }
 
 @media only screen and (min-width: 778px) {
-    .jumbotronTextSm {
-        font-size: 1.5em;
+    .subtitle {
+        font-size: 1.1em;
     }
 
-    .jumbotronTextLg {
-        font-size: 1.9em;
+    .title {
+        font-size: 2.2em;
     }
 }

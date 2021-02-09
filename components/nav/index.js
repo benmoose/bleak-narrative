@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import c from 'classnames'
 
+import { isServer } from '../../utils/env'
 import styles from './nav.module.css'
 import NavLink from './navLink'
 import BleakLogo from '../../public/img/bleak-icon.png'
@@ -127,7 +128,7 @@ const MobileNav = ({ pathname, open, requestCloseMobileNav }) => {
 }
 
 function showNavTad () {
-  if (typeof window === 'undefined') {
+  if (isServer()) {
     return false
   }
   return Math.random() > 0.8

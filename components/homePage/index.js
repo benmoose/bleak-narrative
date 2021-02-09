@@ -1,19 +1,21 @@
 import React from 'react'
+import Grid from '@material-ui/core/Grid'
 import styles from './homePage.module.css'
 
-import Banner from '../../public/img/homepagebanner.png'
-import BannerSlim from '../../public/img/homepagebanner-slim.png'
+import Doodle from '../../public/img/homepagebanner.png'
 
 export const HomePageJumbotron = () => {
   return (
-    <div className={styles.container}>
-      <img src={BannerSlim} className={styles.img} alt='Club culture banner' />
-      <div className={styles.jumbotronTextContainer}>
-        <h2 className={styles.jumbotronTextSm}>Bleeps & Bloops &middot; Sounds & Stories</h2>
-        <h1 className={styles.jumbotronTextLg}>A Home for Underground Club Culture</h1>
-      </div>
-      <img src={Banner} className={styles.img} alt='Club culture banner' />
-    </div>
+    <Grid container spacing={4} alignItems='center'>
+      <Grid item xs={12} sm={6}>
+        <img src={Doodle} className={styles.img} alt='Club culture banner' />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <p className={styles.subtitle}>Bleep Bloop</p>
+        <h1 className={styles.title}>Short 'n snappy title, Andrea</h1>
+        <p>Subtitle here with stuff maybe..?</p>
+      </Grid>
+    </Grid>
   )
 }
 
