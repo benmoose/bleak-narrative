@@ -21,6 +21,7 @@
 
 .buttonContainer {
     display: flex;
+    flex-direction: row-reverse;
 }
 
 .primary, .secondary {
@@ -34,15 +35,15 @@
 .primary,
 .primary:active {
     color: white;
-    background: #007bff;
-    margin: 0 5px 0 0;
+    background: #212529;
+    margin: 0 0 0 5px;
 }
 
 .primary:hover,
 .primary:focus {
     text-decoration: none;
     color: white;
-    background: #0056b3;
+    background: black;
 }
 
 .secondary,
