@@ -1,7 +1,7 @@
 {
   "name": "bleak-narrative",
   "version": "1.0.0",
-  "description": "",
+  "description": "Static site generator for bleaknarrative.com",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -15,13 +15,16 @@
   },
   "author": "Ben Hadfield <benjohnhadfield@gmail.com>",
   "license": "ISC",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/benmoose/bleak-narrative"
+  },
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@material-ui/core": "^4.11.3",
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
     "glob": "^7.1.6",
-    "moment": "^2.29.1",
     "next": "^10.0.6",
     "next-images": "^1.6.2",
     "prismic-dom": "^2.2.4",

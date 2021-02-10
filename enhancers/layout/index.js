@@ -1,4 +1,3 @@
-import React from 'react'
 import c from 'classnames'
 import { useRouter } from 'next/router'
 
