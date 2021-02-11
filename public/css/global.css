@@ -33,6 +33,7 @@ body {
 
 p {
   line-height: 1.6em;
+  margin-bottom: 30px;
 }
 
 small {
@@ -60,8 +61,12 @@ h4 {
     font-size: 1em;
 }
 
-.image {
+.image,
+.imageMinimal {
   width: 100%;
+}
+
+.image {
   border-radius: 4px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
 }

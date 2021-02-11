@@ -3,6 +3,8 @@ import Prismic from 'prismic-javascript'
 import DefaultErrorPage from 'next/error'
 import { useRouter } from 'next/router'
 
+import Doodle from '../public/img/typedoodle.png'
+import { PageDoodle } from '../components/page'
 import FeedList from '../components/feedList'
 import { prismicAPI } from '../utils/prismic'
 
@@ -19,11 +21,14 @@ const BleakPageByType = ({ results, page, totalPages }) => {
 
   const router = useRouter()
   return (
-    <FeedList
-      documents={results}
-      title={<h2>{sentenceCase(router.query.type)}</h2>}
-      desc={typeDescription[router.query.type]}
-    />
+    <>
+      <PageDoodle src={Doodle} width={900} height={214} />
+      <FeedList
+        documents={results}
+        title={<h2>{sentenceCase(router.query.type)}</h2>}
+        desc={typeDescription[router.query.type]}
+      />
+    </>
   )
 }
 

@@ -8,7 +8,7 @@ import NavLink from './navLink'
 import BleakLogo from '../../public/img/bleak-icon.png'
 import NavTad from '../../public/img/nav-tad.png'
 import ArrowLeft from '../../public/icons/arrow-left.svg'
-import BurgerMenu from '../../public/icons/burger-menu.svg'
+import BurgerMenu from '../../public/icons/burger-menu.png'
 import InstagramLogo from '../../public/icons/instagram.svg'
 import SoundcloudLogo from '../../public/icons/musical-note.svg'
 
