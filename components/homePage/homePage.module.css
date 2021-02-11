@@ -1,6 +1,6 @@
 /* Jumbotron */
 .title {
-    font-size: 1.7em;
+    font-size: 1.8em;
     margin: 0 0 30px;
 }
 
@@ -8,7 +8,7 @@
     display: inline-block;
     font-weight: bold;
     margin: 0 0 10px;
-    font-size: .88em;
+    font-size: .8em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
@@ -47,7 +47,7 @@
 
 @media only screen and (min-width: 778px) {
     .subtitle {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .title {
