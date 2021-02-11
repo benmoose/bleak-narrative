@@ -13,13 +13,6 @@
     letter-spacing: 0.1em;
 }
 
-.img {
-    display: block;
-    max-width: 380px;
-    width: 100%;
-    object-fit: contain;
-}
-
 .link {
     color: #212529;
     font-weight: bold;
