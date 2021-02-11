@@ -23,6 +23,7 @@ const CommunityPage = () => {
             img={Stiborski}
             title='Stiborski'
             subtitle='Brazil, He/Him'
+            soundcloudURL='https://soundcloud.com/stiborski'
           >
             <p>I'm just a Brazilian dweeb who spent some time in Europe and fell in love with electronic music (30 years late to the party). After many blurry nights, unforgettable encounters, and friendships made on the dance floors, I decided to learn how to DJ. Unfortunately, now being trapped in my home country because of the pandemic, I'm unable to perform live and make new in-person connections. I'm a coffee addict and a terrible cook. Undateable.</p>
           </Bio>
@@ -33,6 +34,7 @@ const CommunityPage = () => {
             img={Whattis}
             title='Whattis'
             subtitle='Germany, She/Her'
+            soundcloudURL='https://soundcloud.com/djwhattis'
           >
             <p>A Swedish goddess put on earth to ensure that people get what they want - hard techno and objective truths (the latter being a lie). I've spent most of my nightlife exploring the debauchery of Berlin, which has genuinely refined my ability to differentiate good speed from shitty speed. All "jokes" aside, I'm an explosive rave DJ and an incredible cook. So reach out if you want a taste!</p>
           </Bio>
@@ -43,6 +45,7 @@ const CommunityPage = () => {
             img={Elk}
             title='Elk Gerd'
             subtitle='UK, He/Him'
+            soundcloudURL='https://soundcloud.com/elkgerd'
           >
             <p>London raver & DJ, usually found in the darkroom. Heavily inspired by London's blistering illegal rave communities, but with a cute day-drinking disco side too. Give the big middle finger to convention, crank up the volume and get those noise complaints rolling in x (Addendum: blazing cook, I'll turn you vegan).</p>
           </Bio>
