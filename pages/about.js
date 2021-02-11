@@ -1,11 +1,10 @@
-import Banner from '../public/img/toilet-doodle.png'
+import { PageDoodle } from '../components/page'
+import Doodle from '../public/img/aboutdoodle.png'
 
 const AboutPage = () => {
   return (
     <main>
-      <div style={{ height: '260px', marginBottom: '30px' }}>
-        <img src={Banner} style={{ width: '100%', height: '260px', objectFit: 'contain', margin: '0', display: 'block' }} />
-      </div>
+      <PageDoodle src={Doodle} width={999} height={243} />
       <h2>HELLO!</h2>
       <p><strong>Bleak Narrative is a borderless platform showcasing electronic music, visual arts, and stories from the underground club scene.</strong></p>
       <p>We say a big F OFF <strong>(!!)</strong> to the ever-pretentious conventionalism that the bourgeoisie of the electronic club scene represents. Instead, we are a progressive clusterfuck all about solidarity and feeding the world with lots and LOTS of doodles.</p>

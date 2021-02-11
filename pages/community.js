@@ -1,4 +1,6 @@
+import { PageDoodle } from '../components/page'
 import Bio from '../components/bio'
+import Doodle from '../public/img/communitydoodle.png'
 import BleakStrip from '../public/img/bleak-strip-community.png'
 import Stiborski from '../public/img/stiborski-bleak.jpg'
 import Whattis from '../public/img/whattis-bleak.jpg'
@@ -7,6 +9,7 @@ import Elk from '../public/img/elk-bleak.jpg'
 const CommunityPage = () => {
   return (
     <>
+      <PageDoodle src={Doodle} width={999} height={243} />
       <h2>Bleak's Residents</h2>
       <p style={{ margin: '0' }}>We thrive on connections, relationships, and shared experiences. Without a sense of community, especially during these difficult times, it's hard to keep our mental health in check. We need one another to create and explore different kinds of boundaries when social distancing doesn't allow closeness in the conventional sense. This space is for you to get to know something more about the people behind Bleak Narrative, as well as our partners and collaborators. We're always open to bringing more people to join us because the more, the merrier, right?</p>
       <img src={BleakStrip} style={{ margin: '25px 0', width: '100%' }} />

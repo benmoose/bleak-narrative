@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import styles from './page.module.css'
+
 import MusicPage from '../musicPage'
 import PhotoPage from '../photoPage'
 import StoryPage from '../storyPage'
@@ -17,6 +20,14 @@ function pageComponentForType (type) {
       return StoryPage
   }
   throw Error(`No page component for ${type} page type`)
+}
+
+export const PageDoodle = ({ src, width, height }) => {
+  return (
+    <div className={styles.pageDoodle}>
+      <Image priority src={src} width={width} height={height} alt="Bleak's doodle for the page" />
+    </div>
+  )
 }
 
 export default Page
