@@ -9,7 +9,9 @@ export const HomePageJumbotron = () => {
   return (
     <Grid container spacing={6} alignItems='center'>
       <Grid item xs={12} sm={5}>
-        <Image priority src={Doodle} width={500} height={443} layout='' alt='Club culture banner' />
+        <div className={styles.imgContainer}>
+          <Image priority src={Doodle} layout='fill' alt='Club culture banner' className={styles.img} />
+        </div>
       </Grid>
       <Grid item xs={12} sm={7}>
         <p className={styles.subtitle}>Bleeps & Bloops, Sounds & Stories</p>

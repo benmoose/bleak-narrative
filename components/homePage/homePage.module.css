@@ -1,16 +1,27 @@
 /* Jumbotron */
 .title {
-    font-size: 1.8em;
+    text-align: center;
+    font-size: 2em;
     margin: 0 0 30px;
 }
 
 .subtitle {
-    display: inline-block;
+    text-align: center;
     font-weight: bold;
     margin: 0 0 10px;
     font-size: .8em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+.imgContainer {
+    position: relative;
+    max-width: 500px;
+    min-height: 240px;
+}
+
+.img {
+    object-fit: contain;
 }
 
 .link {
@@ -45,12 +56,27 @@
     margin: 0;
 }
 
-@media only screen and (min-width: 778px) {
+@media only screen and (min-width: 600px) and (max-width: 880px) {
     .subtitle {
-        font-size: 1em;
+        text-align: left;
+        font-size: .8em;
     }
 
     .title {
+        text-align: left;
+        font-size: 1.9em;
+    }
+}
+
+
+@media only screen and (min-width: 880px) {
+    .subtitle {
+        text-align: left;
+        font-size: .9em;
+    }
+
+    .title {
+        text-align: left;
         font-size: 2.2em;
     }
 }
