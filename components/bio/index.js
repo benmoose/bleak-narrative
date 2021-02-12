@@ -3,11 +3,10 @@ import Link from 'next/link'
 import c from 'classnames'
 
 import styles from './bio.module.css'
-import Soundcloud from '../../public/icons/soundcloud.svg'
 
-const Bio = ({ img, children, title, subtitle, soundcloudURL }) => {
-  const TitleRow = soundcloudURL
-    ? props => <Link href={soundcloudURL}><a className={styles.titleRow} target='_blank' rel='noreferrer' {...props} /></Link>
+const Bio = ({ img, children, title, subtitle, url, icon }) => {
+  const TitleRow = url
+    ? props => <Link href={url}><a className={styles.titleRow} target='_blank' rel='noreferrer' {...props} /></Link>
     : props => <div className={styles.titleRow} {...props} />
 
   return (
@@ -19,10 +18,10 @@ const Bio = ({ img, children, title, subtitle, soundcloudURL }) => {
 
         <TitleRow>
           {
-            soundcloudURL && (
-              <Link href={soundcloudURL}>
+            url && (
+              <Link href={url}>
                 <a target='_blank' rel='noreferrer' className={styles.soundcloudIcon}>
-                  <Image width={30} height={30} src={Soundcloud} alt='Soundcloud Logo' />
+                  <Image width={30} height={30} src={icon} alt='Soundcloud Logo' />
                 </a>
               </Link>
             )
