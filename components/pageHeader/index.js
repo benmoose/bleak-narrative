@@ -3,8 +3,8 @@ import { parseISO, format } from 'date-fns'
 import NextLink from 'next/link'
 import c from 'classnames'
 
-import authorIcon from '../../public/icons/lip-icon.png'
-import calendarIcon from '../../public/icons/eye-icon.png'
+import Lips from '../../public/icons/lip-icon.png'
+import Eye from '../../public/icons/eye-icon.png'
 import styles from './pageHeader.module.css'
 
 const PageHeader = ({ title, timestamp, authorName, authorLink, authorImage }) => {
@@ -21,12 +21,12 @@ const PageHeader = ({ title, timestamp, authorName, authorLink, authorImage }) =
         <div className={styles.metadataContainer}>
           {
             timestampFormatted && (
-              <small className={styles.metadata}><img className={styles.metadataIcon} src={calendarIcon} />{timestampFormatted}</small>
+              <small className={styles.metadata}><img className={styles.metadataIcon} src={Eye} />{timestampFormatted}</small>
             )
           }
           {
             authorName && (
-              <small className={styles.metadata}><img className={c(styles.metadataIcon, styles.authorIcon)} src={authorIcon} />By {getAuthor(authorName, authorLink)}</small>
+              <small className={styles.metadata}><img className={c(styles.metadataIcon, styles.authorIcon)} src={Lips} />By {getAuthor(authorName, authorLink)}</small>
             )
           }
         </div>
