@@ -27,11 +27,5 @@
 }
 
 .soundcloudIcon {
-  opacity: .7;
-  margin: 0 10px 0 0px;
-}
-
-.titleRow:hover .soundcloudIcon {
-  opacity: 1;
-  color: red;
+  margin: 0 10px 0 0;
 }

@@ -47,7 +47,7 @@ const CommunityPage = () => {
             subtitle='UK, He/Him'
             soundcloudURL='https://soundcloud.com/elkgerd'
           >
-            <p>London raver & DJ, usually found in the darkroom. Heavily inspired by London's blistering illegal rave communities, but with a cute day-drinking disco side too. Give the big middle finger to convention, crank up the volume and get those noise complaints rolling in x (Addendum: blazing cook, I'll turn you vegan).</p>
+            <p>London raver & DJ, usually found in the darkroom. Heavily inspired by London's blistering illegal rave communities, but I have a cute day-drinking disco side too. Give the big middle finger to convention, crank up the volume and get those noise complaints rolling in x</p><p>PS. blazing cook, I'll turn you vegan.</p>
           </Bio>
         </Grid>
       </Grid>
