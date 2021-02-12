@@ -61,7 +61,7 @@ export async function getStaticProps () {
   const allDocuments = await prismicAPI().then(function (api) {
     return api.query(
       Prismic.Predicates.any('document.type', ['music', 'art', 'stories']),
-      { orderings: '[document.first_publication_date desc]', pageSize: 9 }
+      { orderings: '[document.first_publication_date desc]', pageSize: 6 }
     )
   })
 

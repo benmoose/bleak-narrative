@@ -3,7 +3,9 @@ import Prismic from 'prismic-javascript'
 import DefaultErrorPage from 'next/error'
 import { useRouter } from 'next/router'
 
-import Doodle from '../public/img/typedoodle.png'
+import MusicDoodle from '../public/img/typedoodle.png'
+import StoriesDoodle from '../public/img/storiesdodle.png'
+import ArtDoodle from '../public/img/artdoodle.png'
 import { PageDoodle } from '../components/page'
 import FeedList from '../components/feedList'
 import { prismicAPI } from '../utils/prismic'
@@ -14,6 +16,12 @@ const typeDescription = {
   art: <p>Photographs, illustrations, sketches, videos, old party flyers, our in-house comics section, and more. Here we showcase artists producing pieces that resonate with us and have us longing to go clubbing together again.</p>
 }
 
+const doodleByType = {
+  music: MusicDoodle,
+  stories: StoriesDoodle,
+  art: ArtDoodle
+}
+
 const BleakPageByType = ({ results, page, totalPages }) => {
   if (results.length === 0) {
     return <DefaultErrorPage statusCode={404} />
@@ -22,7 +30,7 @@ const BleakPageByType = ({ results, page, totalPages }) => {
   const router = useRouter()
   return (
     <>
-      <PageDoodle src={Doodle} width={900} height={214} />
+      <PageDoodle src={doodleByType[router.query.type]} width={900} height={214} />
       <FeedList
         documents={results}
         title={<h2>{sentenceCase(router.query.type)}</h2>}
