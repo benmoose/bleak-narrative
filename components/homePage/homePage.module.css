@@ -13,6 +13,16 @@
     letter-spacing: 0.1em;
 }
 
+.imgContainer {
+    position: relative;
+    max-width: 500px;
+    min-height: 240px;
+}
+
+.img {
+    object-fit: contain;
+}
+
 .link {
     color: #212529;
     font-weight: bold;
