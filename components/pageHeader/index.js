@@ -3,8 +3,8 @@ import { parseISO, format } from 'date-fns'
 import NextLink from 'next/link'
 import c from 'classnames'
 
-import authorIcon from '../../public/icons/smile.svg'
-import calendarIcon from '../../public/icons/calendar.svg'
+import authorIcon from '../../public/icons/lip-icon.png'
+import calendarIcon from '../../public/icons/eye-icon.png'
 import styles from './pageHeader.module.css'
 
 const PageHeader = ({ title, timestamp, authorName, authorLink, authorImage }) => {
