@@ -14,8 +14,7 @@ const CommunityPage = () => {
   return (
     <>
       <PageDoodle src={Doodle} width={999} height={243} />
-      <h2>Your Residents</h2>
-      <p>We thrive on connections, relationships, and shared experiences. Without a sense of community, especially during these difficult times, it's hard to keep our mental health in check. We need one another to create and explore different kinds of boundaries when social distancing doesn't allow closeness in the conventional sense. This space is for you to get to know something more about the people behind Bleak Narrative, as well as our partners and collaborators. We're always open to bringing more people to join us because the more, the merrier, right?</p>
+      <h2>Residents</h2>
 
       <Grid container spacing={3}>
         <Grid item md={4} sm={12}>
@@ -47,7 +46,7 @@ const CommunityPage = () => {
             subtitle='UK, He/Him'
             soundcloudURL='https://soundcloud.com/elkgerd'
           >
-            <p>London raver & DJ, usually found in the darkroom. Heavily inspired by London's blistering illegal rave communities, but with a cute day-drinking disco side too. Give the big middle finger to convention, crank up the volume and get those noise complaints rolling in x (Addendum: blazing cook, I'll turn you vegan).</p>
+            <p>London raver & DJ, usually found in the darkroom. Heavily inspired by the people and sounds of London's blistering illegal rave scene. Crank up the volume and get those noise complaints rolling in &gt;=]</p><p>Occasionally plagued by my cute, day-drinking disco alter-ego.</p><p>PS. blazing cook, I'll turn u vegan.</p>
           </Bio>
         </Grid>
       </Grid>
@@ -56,7 +55,7 @@ const CommunityPage = () => {
         <Image width={799} height={68} src={BleakStrip} />
       </div>
 
-      <h2>Familiar faces</h2>
+      <h2>Contributors</h2>
       <Grid container>
         <Grid item>
           <Bio
