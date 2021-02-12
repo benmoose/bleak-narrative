@@ -26,7 +26,7 @@ const PageHeader = ({ title, timestamp, authorName, authorLink, authorImage }) =
           }
           {
             authorName && (
-              <small className={styles.metadata}><img className={c(styles.metadataIcon, styles.authorIcon)} src={Lips} />By {getAuthor(authorName, authorLink)}</small>
+              <small className={styles.metadata}><img className={c(styles.metadataIcon, styles.authorIcon)} src={Lips} /><span>By {getAuthor(authorName, authorLink)}</span></small>
             )
           }
         </div>
