@@ -10,14 +10,14 @@
     "start": "next start",
     "lint": "standard --fix",
     "lint:check": "npx standard",
-    "push:staging": "now -f",
-    "push:prod": "now --prod -f"
+    "push:staging": "vercel -f",
+    "push:prod": "vercel --prod -f"
   },
   "author": "Ben Hadfield <benjohnhadfield@gmail.com>",
   "license": "ISC",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/benmoose/bleak-narrative"
+    "type": "git",
+    "url": "https://github.com/benmoose/bleak-narrative"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
@@ -35,6 +35,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "standard": "^16.0.3"
+    "standard": "^16.0.3",
+    "vercel": "^21.2.3"
   }
 }
