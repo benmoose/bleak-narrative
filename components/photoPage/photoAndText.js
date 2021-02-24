@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import RichText from '../richText'
 import styles from './photoAndText.module.css'
 
@@ -19,7 +21,7 @@ const PhotoAndText = ({ items, onClickHandler, urlToGalleryIndex }) => {
 }
 
 function getImageComponent ({ imageURL, imageAlt, onImageClick }) {
-  const ImgC = () => <img src={imageURL} alt={imageAlt} className={styles.image} />
+  const ImgC = () => <Image layout='fill' src={imageURL} alt={imageAlt} className={styles.image} />
   return onImageClick
     ? () => <a onClick={onImageClick}><ImgC /></a>
     : () => <ImgC />
