@@ -21,7 +21,7 @@ const PhotoAndText = ({ items, onClickHandler, urlToGalleryIndex }) => {
 }
 
 function getImageComponent ({ imageURL, imageAlt, onImageClick }) {
-  const ImgC = () => <Image width={900} src={imageURL} alt={imageAlt} className={styles.image} />
+  const ImgC = () => <Image layout='fill' src={imageURL} alt={imageAlt} className={styles.image} />
   return onImageClick
     ? () => <a onClick={onImageClick}><ImgC /></a>
     : () => <ImgC />
