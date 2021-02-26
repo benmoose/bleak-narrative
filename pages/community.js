@@ -51,7 +51,7 @@ const CommunityPage = () => {
             url='https://soundcloud.com/elkgerd'
             icon={Soundcloud}
           >
-            <p>London raver & DJ, usually found in the darkroom. Heavily inspired by the people and sounds of London's blistering illegal rave scene. Crank up the volume, grab your closest human, and scream if you wanna go faster.</p><p>Occasionally plagued by my cute, day-drinking disco alter-ego. PS. Pretty good cook, I just love those 'shrooms!</p>
+            <p>London raver & DJ, usually found in the darkroom. Heavily inspired by the people and sounds of London's blistering illegal rave scene. Crank up the volume, grab your closest human, and scream if you wanna go faster.</p><p>Occasionally plagued by my day-drinking disco alter-ego. PS. Pretty good cook, I love them 'shrooms!</p>
           </Bio>
         </Grid>
       </Grid>
