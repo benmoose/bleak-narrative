@@ -8,8 +8,9 @@ import TwoPhotos from './twoPhotos'
 import ThreePhotos from './threePhotos'
 import PhotoAndText from './photoAndText'
 import FullWidthImage from './fullWidthImage'
+import Video from './video'
 
-const SLICE_TYPES = ['one_photo', 'two_photos', 'three_photos', 'photo___text', 'full_width_image']
+const SLICE_TYPES = ['one_photo', 'two_photos', 'three_photos', 'photo___text', 'full_width_image', 'video']
 
 const PhotoPage = ({ document }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -57,6 +58,8 @@ const PhotoPage = ({ document }) => {
               return <PhotoAndText key={i} items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
             case 'full_width_image':
               return <FullWidthImage items={slice.items} onClickHandler={openGalleryOnPhoto} urlToGalleryIndex={urlToGalleryIndex} />
+            case 'video':
+              return <Video items={slice.items} />
             default:
               throw Error(`No component for photo-page body slice of type ${slice.slice_type}`)
           }
