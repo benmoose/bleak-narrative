@@ -7,7 +7,7 @@ import FeedList from '../components/feedList'
 import PageLink from '../components/link'
 import SoundcloudPlayer from '../components/soundcloudPlayer'
 import { HomePageJumbotron, HrTitle } from '../components/homePage'
-import { prismicAPI } from '../utils/prismic'
+import { PRISMIC_DOC_TYPES, PRISMIC_DOC_TYPE_MUSIC, prismicAPI } from '../utils/prismic'
 import RichText from '../components/richText'
 
 const Home = ({ recentDocuments, latestMusicDocument }) => {
@@ -36,7 +36,7 @@ const Home = ({ recentDocuments, latestMusicDocument }) => {
       <Grid item xs={12}>
         <HrTitle>Latest DJ mix</HrTitle>
         <h3 style={{ margin: 0 }}>
-          <Link href={`/music/${latestMusicDocument.uid}`}>
+          <Link href={`/${PRISMIC_DOC_TYPE_MUSIC}/${latestMusicDocument.uid}`}>
             <a style={{ color: 'black', textDecoration: 'none' }}>{musicData.title[0].text}</a>
           </Link>
         </h3>
@@ -60,14 +60,14 @@ const Home = ({ recentDocuments, latestMusicDocument }) => {
 export async function getStaticProps () {
   const allDocuments = await prismicAPI().then(function (api) {
     return api.query(
-      Prismic.Predicates.any('document.type', ['music', 'art', 'stories']),
+      Prismic.Predicates.any('document.type', PRISMIC_DOC_TYPES),
       { orderings: '[document.first_publication_date desc]', pageSize: 6 }
     )
   })
 
   const musicDocuments = await prismicAPI().then(function (api) {
     return api.query(
-      Prismic.Predicates.any('document.type', ['music']),
+      Prismic.Predicates.any('document.type', [PRISMIC_DOC_TYPE_MUSIC]),
       { orderings: '[document.first_publication_date desc]', pageSize: 1 }
     )
   })
