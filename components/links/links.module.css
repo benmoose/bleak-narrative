@@ -40,7 +40,6 @@
 }
 
 .linkType {
-    min-width: 80px;
     display: inline-block;
     margin-right: 10px;
     padding: 1px 7px;
@@ -54,5 +53,7 @@
 }
 
 .linkTimestamp {
+    display: inline-block;
     opacity: .7;
+    margin: 0 0 0 5px;
 }
