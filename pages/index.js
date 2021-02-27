@@ -50,7 +50,7 @@ const Home = ({ recentDocuments, latestMusicDocument }) => {
         <FeedList
           minimal
           documents={recentDocuments.map(item => item.document)}
-          title={<HrTitle>Recent stories</HrTitle>}
+          title={<HrTitle>Recent narratives</HrTitle>}
         />
       </Grid>
     </Grid>
