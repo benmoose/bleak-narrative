@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
 import c from 'classnames'
 
+import { getTitle } from '../../utils/prismic'
 import PageLink from '../link'
 import styles from './feedItem.module.css'
 
@@ -15,7 +16,7 @@ const FeedItem = ({ type, document, minimal }) => {
       timestamp={document.data.publication_date_override || document.first_publication_date}
       authorName={document.data.author_name}
       authorProfile={document.data.author_profile}
-      title={getTitle(type, document)}
+      title={getTitle(document)}
       image={getThumbnail(type, document)}
       smallText={minimal}
       minimal={minimal}
@@ -54,18 +55,6 @@ const FeedLinkContent = ({ image, href, timestamp, title, authorName, authorProf
       </div>
     </div>
   )
-}
-
-function getTitle (type, document) {
-  switch (type) {
-    case 'music':
-      return document.data.title[0].text
-    case 'art':
-      return document.data.title[0].text
-    case 'stories':
-      return document.data.title[0].text
-  }
-  throw Error(`Cannot get feed-link title for ${type} type`)
 }
 
 function getThumbnail (type, document) {

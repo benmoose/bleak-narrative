@@ -12,22 +12,47 @@
 }
 
 .link:hover {
-    color: indianred;
-}
-
-.link:hover .linkContainer {
-    background: #f7f7f8;
+    color: #CA4246;
 }
 
 .linkContainer {
-    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 12px 15px;
     margin: 0;
     border: 2px black solid;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .16);
     border-radius: 4px;
 }
 
-.linkContainer p {
+.link:hover .linkContainer {
+    background: #f7f7f8;
+}
+
+.linkIcon {
+    height: 26px;
+    margin: 0 15px 0 0;
+}
+
+.link:hover .linkType {
+    color: black;
+}
+
+.linkType {
+    min-width: 80px;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 1px 7px;
+    border-radius: 10px;
+}
+
+.linkText {
+    flex: 1;
     margin: 0;
     font-size: 1.1em;
+}
+
+.linkTimestamp {
+    opacity: .7;
 }
