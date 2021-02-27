@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { parseISO, format } from 'date-fns'
 
 import LinkIcon from '../../public/icons/link-icon.svg'
 import styles from './links.module.css'
@@ -11,7 +12,8 @@ export const LinkList = ({ items }) => {
   )
 }
 
-export const LinkItem = ({ type, text, link }) => {
+export const LinkItem = ({ type, text, link, timestamp }) => {
+  const publicationDate = timestamp && format(parseISO(timestamp), 'do LLL')
   return (
     <a href={link} rel='nofollow' className={styles.link}>
       <div className={styles.linkContainer}>
@@ -20,6 +22,7 @@ export const LinkItem = ({ type, text, link }) => {
         </div>
         <span className={styles.linkType}>{type}</span>
         <strong className={styles.linkText}>{text}</strong>
+        <span className={styles.linkTimestamp}>{publicationDate}</span>
       </div>
     </a>
   )

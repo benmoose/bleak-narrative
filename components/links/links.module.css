@@ -12,7 +12,7 @@
 }
 
 .link:hover {
-    color: indianred;
+    color: #CA4246;
 }
 
 .linkContainer {
@@ -51,4 +51,8 @@
     flex: 1;
     margin: 0;
     font-size: 1.1em;
+}
+
+.linkTimestamp {
+    opacity: .7;
 }
