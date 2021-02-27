@@ -1,15 +1,16 @@
-import { PRISMIC_DOC_TYPE_MUSIC, PRISMIC_DOC_TYPE_ART, PRISMIC_DOC_TYPE_STORIES, prismicAPI } from '../utils/prismic'
-import Links from '../components/links'
 import Prismic from 'prismic-javascript'
 
-const LinksPage = ({ linkDocument }) => {
-  const links = linkDocument.data.body.map((slice, i) => (
-    <Links key={`${i}-${slice.slice_type}`} items={slice.items} />
-  ))
+import { PRISMIC_DOC_TYPE_MUSIC, PRISMIC_DOC_TYPE_ART, PRISMIC_DOC_TYPE_STORIES, prismicAPI, getTitle, getLink } from '../utils/prismic'
+import { LinkItem } from '../components/links'
+
+const LinksPage = ({ linkDocument, latestDocuments }) => {
+  // const links = linkDocument.data.body.map((slice, i) => (
+  //   <LinkList key={`${i}-${slice.slice_type}`} items={slice.items} />
+  // ))
   return (
     <>
-      <h3>Clicky stuffs :)</h3>
-      {links}
+      <h3>Latest clickies (:</h3>
+      {latestDocuments.map(d => <LinkItem key={d.uid} type={d.type} text={getTitle(d)} link={getLink(d)} />)}
     </>
   )
 }
