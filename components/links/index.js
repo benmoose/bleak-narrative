@@ -12,16 +12,21 @@ export const LinkList = ({ items }) => {
   )
 }
 
-export const LinkItem = ({ type, text, link, timestamp }) => {
-  const publicationDate = timestamp && format(parseISO(timestamp), 'do LLL')
+export const LinkItem = ({ type, text, link, timestamp, authorName }) => {
+  const publicationDate = timestamp && format(parseISO(timestamp), 'dd LLL')
+  const title = authorName
+    ? `${text} by ${authorName}`
+    : text
   return (
     <a href={link} rel='nofollow' className={styles.link}>
       <div className={styles.linkContainer}>
         <div className={styles.linkIcon}>
           <Image width={26} height={26} src={LinkIcon} />
         </div>
-        <span className={styles.linkType}>{type}</span>
-        <strong className={styles.linkText}>{text}</strong>
+        <div className={styles.titleContainer}>
+          <span className={styles.linkType}>{type}</span>
+          <strong className={styles.linkText}>{title}</strong>
+        </div>
         <span className={styles.linkTimestamp}>{publicationDate}</span>
       </div>
     </a>
