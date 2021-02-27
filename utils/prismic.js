@@ -29,3 +29,7 @@ export function getLink (document) {
   }
   return `/${document.type}/${document.uid}`
 }
+
+export function getAuthorName (document) {
+  return document.data.author_name
+}

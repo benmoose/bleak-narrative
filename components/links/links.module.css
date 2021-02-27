@@ -18,7 +18,6 @@
 .linkContainer {
     display: flex;
     align-items: center;
-    justify-content: left;
     padding: 12px 15px;
     margin: 0;
     border: 2px black solid;
@@ -36,14 +35,14 @@
 }
 
 .link:hover .linkType {
-    color: black;
+    color: #000000;
 }
 
-.linkType {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 1px 7px;
-    border-radius: 10px;
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 5px;
 }
 
 .linkText {
@@ -53,7 +52,7 @@
 }
 
 .linkTimestamp {
-    display: inline-block;
     opacity: .7;
-    margin: 0 0 0 5px;
+    align-self: flex-end;
+    font-size: .9em;
 }

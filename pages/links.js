@@ -1,6 +1,6 @@
 import Prismic from 'prismic-javascript'
 
-import { PRISMIC_DOC_TYPE_MUSIC, PRISMIC_DOC_TYPE_ART, PRISMIC_DOC_TYPE_STORIES, prismicAPI, getTitle, getLink } from '../utils/prismic'
+import { PRISMIC_DOC_TYPE_MUSIC, PRISMIC_DOC_TYPE_ART, PRISMIC_DOC_TYPE_STORIES, prismicAPI, getTitle, getLink, getAuthorName } from '../utils/prismic'
 import { LinkItem } from '../components/links'
 
 const LinksPage = ({ latestDocuments, olderDocuments }) => {
@@ -22,6 +22,7 @@ function getLinksForDocuments (documents) {
       type={d.type}
       text={getTitle(d)}
       link={getLink(d)}
+      authorName={getAuthorName(d)}
       timestamp={d.first_publication_date}
     />
   ))
