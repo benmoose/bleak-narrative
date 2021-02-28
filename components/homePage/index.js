@@ -15,7 +15,7 @@ export const HomePageJumbotron = () => {
       </Grid>
       <Grid item xs={12} sm={7}>
         <p className={styles.subtitle}>Bleeps & Bloops, Sounds & Stories</p>
-        <h1 className={styles.title}>Welcum to<br />Bleak Narrative</h1>
+        <h1 className={styles.title}>Queer music platform for underground schmucks</h1>
       </Grid>
     </Grid>
   )
