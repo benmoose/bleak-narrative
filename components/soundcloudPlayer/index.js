@@ -21,7 +21,7 @@ const SoundcloudPlayer = ({ src }) => {
 function generateSoundcloudSRC (soundcloudLink) {
   const parts = new URL(soundcloudLink)
   const cleanLink = encodeURIComponent(`https://${parts.host}${parts.pathname}`)
-  return `https://w.soundcloud.com/player/?url=${cleanLink}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=true&show_teaser=true`
+  return `https://w.soundcloud.com/player/?url=${cleanLink}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=true&show_teaser=false`
 }
 
 export default SoundcloudPlayer
