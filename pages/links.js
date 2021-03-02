@@ -6,7 +6,7 @@ import { LinkItem } from '../components/links'
 const LinksPage = ({ latestDocuments, olderDocuments }) => {
   return (
     <>
-      <h3>Latest from Bleak (:</h3>
+      <h3>Latest from Bleak</h3>
       {getLinksForDocuments(latestDocuments)}
 
       <h3 style={{ margin: '50px 0 30px' }}>From the past few weeks</h3>
