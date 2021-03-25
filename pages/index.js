@@ -10,8 +10,8 @@ import { HomePageJumbotron, HrTitle } from '../components/homePage'
 import { PRISMIC_DOC_TYPES, PRISMIC_DOC_TYPE_MUSIC, prismicAPI } from '../utils/prismic'
 import RichText from '../components/richText'
 
-const Home = ({ recentDocuments, latestMusicDocument }) => {
-  const musicData = latestMusicDocument.document.data
+const Home = ({ recentDocuments, featuredMusicDocument }) => {
+  const musicData = featuredMusicDocument.document.data
   const SCPlayer = musicData.body.map(slice => slice.items.map((sliceItem, i) => (
     <React.Fragment key={i}>
       <SoundcloudPlayer src={sliceItem.track.embed_url} />
@@ -36,7 +36,7 @@ const Home = ({ recentDocuments, latestMusicDocument }) => {
       <Grid item xs={12}>
         <HrTitle>Latest DJ mix</HrTitle>
         <h3 style={{ margin: 0 }}>
-          <Link href={`/${PRISMIC_DOC_TYPE_MUSIC}/${latestMusicDocument.uid}`}>
+          <Link href={`/${PRISMIC_DOC_TYPE_MUSIC}/${featuredMusicDocument.uid}`}>
             <a style={{ color: 'black', textDecoration: 'none' }}>{musicData.title[0].text}</a>
           </Link>
         </h3>
@@ -63,19 +63,30 @@ export async function getStaticProps () {
       Prismic.Predicates.any('document.type', PRISMIC_DOC_TYPES),
       { orderings: '[document.first_publication_date desc]', pageSize: 6 }
     )
-  })
+  }).then(getDocumentsFromPrismicResponse)
 
-  const musicDocuments = await prismicAPI().then(function (api) {
+  const featuredMusicDocumentResp = await prismicAPI().then(function (api) {
     return api.query(
-      Prismic.Predicates.any('document.type', [PRISMIC_DOC_TYPE_MUSIC]),
+      [Prismic.Predicates.at(`my.${PRISMIC_DOC_TYPE_MUSIC}.feature_on_home`, true),
+        Prismic.Predicates.any('document.type', [PRISMIC_DOC_TYPE_MUSIC])],
       { orderings: '[document.first_publication_date desc]', pageSize: 1 }
     )
-  })
-
-  const latestMusicDocument = musicDocuments.results.map(preparePrismicResponse)[0]
+  }).then(getDocumentsFromPrismicResponse)
+  const featuredMusicDocument = featuredMusicDocumentResp.map(preparePrismicResponse)[0]
   // filter out the featured music document so we don't repeat
-  const recentDocuments = allDocuments.results.map(preparePrismicResponse).filter(el => el.uid !== latestMusicDocument.uid)
-  return { props: { recentDocuments, latestMusicDocument } }
+  const recentDocuments = allDocuments.map(preparePrismicResponse).filter(el => el.uid !== featuredMusicDocument.uid)
+  return { props: { recentDocuments, featuredMusicDocument } }
+}
+
+// Returns an array of results, errors if prismic response is empty
+function getDocumentsFromPrismicResponse (response) {
+  if (!response) {
+    throw Error('Unexpected empty response from Prismic API')
+  }
+  if (response.total_results_size === 0) {
+    throw Error('Prismic response should not be empty, is the query correct or has the data on prismic changed unexpectedly?')
+  }
+  return response.results
 }
 
 function preparePrismicResponse (document) {
