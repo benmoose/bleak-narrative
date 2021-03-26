@@ -1,8 +1,9 @@
 import React from 'react'
 
-import SoundcloudPlayer from '../soundcloudPlayer'
 import RichText from '../richText'
 import PageHeader from '../pageHeader'
+import SoundcloudPlayer from '../soundcloudPlayer'
+import SpotifyPlayer from '../spotifyPlayer'
 
 const MusicPage = ({ document }) => {
   const title = document.data.title[0].text
@@ -19,15 +20,30 @@ const MusicPage = ({ document }) => {
       />
 
       {
-        body.map(slice => slice.items.map((sliceItem, i) => (
-          <React.Fragment key={i}>
-            <SoundcloudPlayer src={sliceItem.track.embed_url} />
-            <RichText content={sliceItem.track_description} />
-          </React.Fragment>
-        )))
+        body.map(slice => slice.items.map((sliceItem, i) => {
+          const AudioPlayer = getAudioPlayer(sliceItem)
+          return (
+            <React.Fragment key={i}>
+              <AudioPlayer src={sliceItem.track.embed_url} />
+              <RichText content={sliceItem.track_description} />
+            </React.Fragment>
+          )
+        }))
       }
     </>
   )
+}
+
+function getAudioPlayer (item) {
+  console.log(item)
+  const provider = item.track.provider_name
+  if (provider === 'SoundCloud') {
+    return SoundcloudPlayer
+  }
+  if (provider === 'Spotify') {
+    return SpotifyPlayer
+  }
+  throw Error(`Unknown audio provider '${provider}'`)
 }
 
 export default MusicPage
