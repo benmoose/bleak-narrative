@@ -7,11 +7,11 @@ const BleakPage = ({ document }) => {
   return <Page document={document} />
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps ({ preview = false, previewData, params }) {
   const document = await prismicAPI().then(api => {
-    return api.getByUID(params.type, params.uid)
+    return api.getByUID(params.type, params.uid, previewData)
   })
-  const props = { document }
+  const props = { document, preview }
   return { props }
 }
 
