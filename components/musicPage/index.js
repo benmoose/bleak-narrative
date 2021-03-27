@@ -35,7 +35,6 @@ const MusicPage = ({ document }) => {
 }
 
 function getAudioPlayer (item) {
-  console.log(item)
   const provider = item.track.provider_name
   if (provider === 'SoundCloud') {
     return SoundcloudPlayer

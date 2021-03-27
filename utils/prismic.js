@@ -11,6 +11,13 @@ export function prismicAPI () {
   return Prismic.api(apiEndpoint)
 }
 
+export function linkResolver (doc) {
+  if (doc.isBroken) {
+    return '/404'
+  }
+  return `/${doc.type}/${doc.uid}`
+}
+
 export function getTitle (document) {
   switch (document.type) {
     case 'music':

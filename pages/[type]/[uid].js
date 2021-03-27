@@ -1,15 +1,23 @@
 import Prismic from 'prismic-javascript'
+import { Helmet } from 'react-helmet'
 
 import Page from '../../components/page'
-import { prismicAPI } from '../../utils/prismic'
+import { prismicAPI, getTitle, getAuthorName } from '../../utils/prismic'
 
 const BleakPage = ({ document }) => {
-  return <Page document={document} />
+  return (
+    <>
+      <Helmet>
+        <title>{`${getTitle(document)} by ${getAuthorName(document)}`}</title>
+      </Helmet>
+      <Page document={document} />
+    </>
+  )
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps ({ previewData, params }) {
   const document = await prismicAPI().then(api => {
-    return api.getByUID(params.type, params.uid)
+    return api.getByUID(params.type, params.uid, previewData)
   })
   const props = { document }
   return { props }
