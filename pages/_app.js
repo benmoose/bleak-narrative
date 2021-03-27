@@ -14,6 +14,7 @@ export default Layout(({ Component, pageProps }) => {
         <meta name='description' content="Artsy-fartsy, bleepy-bloopy music platform for underground schmucks. Don't take yourself too seriously and we'll get along just fine." />
         <meta name='robots' content='index, follow' />
         <script async defer data-domain='bleaknarrative.com' src='https://plausible.io/js/plausible.js' />
+        <script async defer src='https://static.cdn.prismic.io/prismic.js?new=true&repo=bleaknarrative' />
       </Helmet>
       <Component {...pageProps} />
     </>
