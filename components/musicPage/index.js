@@ -20,23 +20,31 @@ const MusicPage = ({ document }) => {
       />
 
       {
-        body.map(slice => slice.items.map((sliceItem, i) => {
-          const AudioPlayer = getAudioPlayer(sliceItem)
-          return (
-            <React.Fragment key={i}>
-              <AudioPlayer src={sliceItem.track.embed_url} />
-              <RichText content={sliceItem.track_description} />
-            </React.Fragment>
-          )
-        }))
+        body.map(getSliceComponent)
       }
     </>
   )
 }
 
-function getAudioPlayer (item) {
-  console.log(item)
-  const provider = item.track.provider_name
+function getSliceComponent (slice) {
+  if (slice.slice_type === 'music_player') {
+    const items = slice.items
+    return items.map((sliceItem, i) => {
+      const AudioPlayer = getAudioPlayer(sliceItem)
+      return (
+        <React.Fragment key={i}>
+          <AudioPlayer src={sliceItem.track.embed_url} />
+          <RichText content={sliceItem.track_description} />
+        </React.Fragment>
+      )
+    })
+  } else if (slice.slice_type === 'text') {
+    return <RichText content={slice.primary.content} />
+  }
+}
+
+function getAudioPlayer (slice) {
+  const provider = slice.track.provider_name
   if (provider === 'SoundCloud') {
     return SoundcloudPlayer
   }
