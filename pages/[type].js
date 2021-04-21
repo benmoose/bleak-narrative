@@ -11,7 +11,7 @@ import FeedList from '../components/feedList'
 import { prismicAPI } from '../utils/prismic'
 
 const typeDescription = {
-  music: <p>We publish original mixes from DJs and artists coming from all corners of the world, representing all electronic music styles, every Monday at 6pm CET.</p>,
+  music: <p>Original mixes by DJs from all corners of the world every Monday at 6pm CET. Cratedigging by friends, foes, lovers, and exes now and then. Live streams, dead streams, you name it: anything that makes a sound you’ll find here!</p>,
   stories: <p>Friendships forming on the dance floor, surreal conversations with strangers in the chill area, or even not-so-happy cautionary club tales involving illicit substances. No matter if you’re the superstar DJ or the light-bulb-changer at the local bar - this space is open for all narratives to be told.</p>,
   art: <p>Photographs, illustrations, sketches, videos, old party flyers, our in-house comics section, and more. Here we showcase artists producing pieces that resonate with us and have us longing to go clubbing together again.</p>
 }
