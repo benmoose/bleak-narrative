@@ -4,6 +4,7 @@ import RichText from '../richText'
 import PageHeader from '../pageHeader'
 import SoundcloudPlayer from '../soundcloudPlayer'
 import SpotifyPlayer from '../spotifyPlayer'
+import { YouTubeVideo } from '../video'
 
 const MusicPage = ({ document }) => {
   const title = document.data.title[0].text
@@ -40,6 +41,8 @@ function getSliceComponent (slice) {
     })
   } else if (slice.slice_type === 'text') {
     return <RichText content={slice.primary.content} />
+  } else if (slice.slice_type === 'external_video') {
+    return <YouTubeVideo items={slice.items} />
   }
 }
 
