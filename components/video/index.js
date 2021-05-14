@@ -17,4 +17,10 @@ const HostedVideo = ({ items }) => {
   )
 }
 
+export const YouTubeVideo = ({ items }) => {
+  return items.map(item => (
+    <div className={styles.videoEmbed} key={item.video.embed_url} dangerouslySetInnerHTML={{ __html: item.video.html }} />
+  ))
+}
+
 export default HostedVideo

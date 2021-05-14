@@ -5,3 +5,12 @@
 .video {
     width: 100%;
 }
+
+.videoEmbed {
+    width: 100%;
+}
+
+.videoEmbed iframe {
+    width: 100%;
+    min-height: 400px;
+}
