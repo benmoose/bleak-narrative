@@ -39,7 +39,7 @@ const CommunityPage = () => {
             url='https://soundcloud.com/djwhattis'
             icon={Soundcloud}
           >
-            <p>A Swedish goddess put on earth to ensure that people get what they want - hard techno and objective truths (the latter being a lie). I've spent most of my nightlife exploring the debauchery of Berlin, which has genuinely refined my ability to differentiate good speed from shitty speed. All "jokes" aside, I'm an explosive rave DJ and an incredible cook. So reach out if you want a taste!</p>
+            <p>A Swedish goddess put on earth to ensure that people get what they want - hard techno and objective truths (the latter being a lie). When I play, the tracks go from dark to jolly, from brutal to soft, from nasty to kind before you even had the chance to say “stahp it plz”. I might look really tough, but I’m one of the softest, most genuine, funniest, hottest, and smartest people you’ll probably never meet. Sarcasm is my default defense mechanism. Text me &lt;3</p>
           </Bio>
         </Grid>
 
