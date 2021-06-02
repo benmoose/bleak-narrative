@@ -4,6 +4,7 @@ import RichText from '../richText'
 import PageHeader from '../pageHeader'
 import SoundcloudPlayer from '../soundcloudPlayer'
 import SpotifyPlayer from '../spotifyPlayer'
+import BandcampPlayer from '../bandcampPlayer'
 import { YouTubeVideo } from '../video'
 
 const MusicPage = ({ document }) => {
@@ -53,6 +54,9 @@ function getAudioPlayer (slice) {
   }
   if (provider === 'Spotify') {
     return SpotifyPlayer
+  }
+  if (provider === 'Bandcamp') {
+    return BandcampPlayer
   }
   throw Error(`Unknown audio provider '${provider}'`)
 }

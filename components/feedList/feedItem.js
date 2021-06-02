@@ -82,7 +82,7 @@ function getMusicThumbnail (document) {
     return documentData.feed_thumbnail.url
   }
   if (documentData.body.length > 0) {
-    const firstSlice = documentData.body[0]
+    const firstSlice = documentData.body.find(slice => slice.slice_type === 'music_player')
     if (firstSlice.items.length > 0) {
       return firstSlice.items[0].track.thumbnail_url
     }
