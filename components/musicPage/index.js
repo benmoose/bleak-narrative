@@ -40,9 +40,25 @@ function getSliceComponent (slice) {
         </React.Fragment>
       )
     })
-  } else if (slice.slice_type === 'text') {
+  }
+  if (slice.slice_type === 'bandcamp_embed') {
+    return slice.items.map((sliceItem, i) => {
+      if (sliceItem.embed_url.length !== 1) {
+        throw Error('bandcamp embed is missing')
+      }
+      const embed = sliceItem.embed_url[0].text
+      return (
+        <React.Fragment key={i}>
+          <BandcampPlayer embed={embed} />
+          <RichText content={sliceItem.caption} />
+        </React.Fragment>
+      )
+    })
+  }
+  if (slice.slice_type === 'text') {
     return <RichText content={slice.primary.content} />
-  } else if (slice.slice_type === 'external_video') {
+  }
+  if (slice.slice_type === 'external_video') {
     return <YouTubeVideo items={slice.items} />
   }
 }
@@ -54,9 +70,6 @@ function getAudioPlayer (slice) {
   }
   if (provider === 'Spotify') {
     return SpotifyPlayer
-  }
-  if (provider === 'Bandcamp') {
-    return BandcampPlayer
   }
   throw Error(`Unknown audio provider '${provider}'`)
 }
