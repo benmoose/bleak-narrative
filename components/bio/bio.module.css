@@ -16,10 +16,29 @@
   text-decoration: none;
 }
 
+.subtitleRow {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
 .subtitle {
   font-weight: bold;
   font-family: 'BodyFont', sans-serif;
   margin: 0;
+  padding: 0;
+}
+
+.subtitleEmail,
+.subtitleEmail:hover,
+.subtitleEmail:active,
+.subtitleEmail:focus {
+  text-decoration: none;
+  margin: 0;
+  color: black;
+  font-size: 1em;
+  padding-top: 1px;
+  cursor: pointer;
 }
 
 .img {
