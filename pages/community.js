@@ -24,7 +24,6 @@ const CommunityPage = () => {
             img={Stiborski}
             title='Stiborski'
             subtitle='Brazil, He/Him'
-            email='stiborski@bleaknarrative.com'
             url='https://soundcloud.com/stiborski'
             icon={Soundcloud}
           >
@@ -37,7 +36,6 @@ const CommunityPage = () => {
             img={Whattis}
             title='Whattis'
             subtitle='Germany, She/Her'
-            email='whattis@bleaknarrative.com'
             url='https://soundcloud.com/djwhattis'
             icon={Soundcloud}
           >
@@ -50,7 +48,6 @@ const CommunityPage = () => {
             img={Elk}
             title='Elk Gerd'
             subtitle='UK, He/Him'
-            email='elk@bleaknarrative.com'
             url='https://soundcloud.com/elkgerd'
             icon={Soundcloud}
           >
@@ -70,7 +67,7 @@ const CommunityPage = () => {
             img={Cameron}
             title='Cameron'
             subtitle='USA, He/Him'
-            url='https://instagram.com/fluffi_er'
+            url='https://instagram.com/_chef.cam_'
             icon={Instagram}
           >
             <p>After studying in New Orleans, New York, and Berlin, dance floors and music are pretty ubiquitous in my life. I have always found an intense solidarity and freedom around other dancers and developed some passionate ideas about current trends in electronic music. With no one to share them with near the dance floor, I've turned to writing them down on this wonderful platform filled with wonderful people. In a past life found sharing a curb and a cigarette with a stranger; currently laying low finishing undergrad in a Brooklyn apartment and practicing DJing so I may one day utter the coveted words "I only spin vinyl.” Most likely not wearing clothes.</p>

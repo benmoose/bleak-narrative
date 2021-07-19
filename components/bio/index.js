@@ -4,7 +4,7 @@ import c from 'classnames'
 
 import styles from './bio.module.css'
 
-const Bio = ({ img, children, title, subtitle, email, url, icon }) => {
+const Bio = ({ img, children, title, subtitle, url, icon }) => {
   const TitleRow = url
     ? props => <Link href={url}><a className={styles.titleRow} target='_blank' rel='noreferrer' {...props} /></Link>
     : props => <div className={styles.titleRow} {...props} />
@@ -28,12 +28,7 @@ const Bio = ({ img, children, title, subtitle, email, url, icon }) => {
           }
           <h3 className={styles.title}>{title}</h3>
         </TitleRow>
-        <div className={styles.subtitleRow}>
-          <h4 className={styles.subtitle}>{subtitle}</h4>
-          {email && (
-            <a rel='noopener noreferrer' target='_blank' href={`mailto:${email}?subject=Hello%20Bleak!`} className={styles.subtitleEmail}>Send email</a>
-          )}
-        </div>
+        <h4 className={styles.subtitle}>{subtitle}</h4>
       </div>
       {children}
     </section>
