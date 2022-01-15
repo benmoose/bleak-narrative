@@ -10,7 +10,6 @@ import Stiborski from '../public/img/stiborski-bleak.jpg'
 import Whattis from '../public/img/whattis-bleak.jpg'
 import Elk from '../public/img/elkgerd.jpg'
 import Soundcloud from '../public/icons/soundcloud.svg'
-import Instagram from '../public/icons/instagram.svg'
 
 const CommunityPage = () => {
   return (
@@ -45,13 +44,13 @@ const CommunityPage = () => {
 
         <Grid item md={4} sm={12}>
           <Bio
-            img={Elk}
-            title='Elk Gerd'
-            subtitle='UK, He/Him'
-            url='https://soundcloud.com/elkgerd'
+            img={Cameron}
+            title='Fluffi'
+            subtitle='USA, He/Him'
+            url='https://soundcloud.com/fluffi_er'
             icon={Soundcloud}
           >
-            <p>London raver & DJ, usually found in the darkroom. Heavily inspired by the people and sounds of London's blistering illegal rave scene. Crank up the volume, grab your closest human, and scream if you wanna go faster.</p><p>Occasionally plagued by my day-drinking disco alter-ego. PS. Pretty good cook, I love them 'shrooms!</p>
+            <p>Brooklyn based promoter, door person, dj, raver, writer, and overall good time, not necessarily in that order. Constantly enthused by my fellow dancers, I have turned to Bleak to share ideas and music with the world wide web. I love to clear the dance floor by clanging 140 bpm techno into some nu disco, most likely while not wearing clothes. Find me bouncing around Bushwick or somewhere else idk</p>
           </Bio>
         </Grid>
       </Grid>
@@ -60,17 +59,17 @@ const CommunityPage = () => {
         <Image width={799} height={68} src={BleakStrip} />
       </div>
 
-      <h2>Contributors</h2>
+      <h2>Backstage team</h2>
       <Grid container>
-        <Grid item>
+        <Grid item md={4} sm={12}>
           <Bio
-            img={Cameron}
-            title='Cameron'
-            subtitle='USA, He/Him'
-            url='https://instagram.com/_chef.cam_'
-            icon={Instagram}
+            img={Elk}
+            title='Elk Gerd'
+            subtitle='UK, He/Him'
+            url='https://soundcloud.com/elkgerd'
+            icon={Soundcloud}
           >
-            <p>After studying in New Orleans, New York, and Berlin, dance floors and music are pretty ubiquitous in my life. I have always found an intense solidarity and freedom around other dancers and developed some passionate ideas about current trends in electronic music. With no one to share them with near the dance floor, I've turned to writing them down on this wonderful platform filled with wonderful people. In a past life found sharing a curb and a cigarette with a stranger; currently laying low finishing undergrad in a Brooklyn apartment and practicing DJing so I may one day utter the coveted words "I only spin vinyl.” Most likely not wearing clothes.</p>
+            <p>London warehouse dweller, DJ and party organiser, Elk manages the website and techy stuff for us so we can focus on the MUSAAAC.</p>
           </Bio>
         </Grid>
       </Grid>
